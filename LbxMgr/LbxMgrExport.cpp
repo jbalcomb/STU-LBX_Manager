@@ -18,8 +18,8 @@ void lbxmgr_export_to_csv(LBX_DATA * lbx)
     if (LBXMGR_DEBUG_MODE) printf("DEBUG: BEGIN: lbxmgr_export_to_csv()\n");
 
     create_export_directory_path();
-    if (LBXMGR_DEBUG_MODE) printf("DEBUG: lbx->meta->file_name_base: %s\n", lbx->meta->file_name_base);
-    create_export_directory_path_csv(lbx->meta->file_name_base);
+    if (LBXMGR_DEBUG_MODE) printf("DEBUG: lbx->meta->file_name_base: %s\n", lbx->meta->meta_file_name_base);
+    create_export_directory_path_csv(lbx->meta->meta_file_name_base);
 
 
     char * export_file_path;
@@ -27,7 +27,7 @@ void lbxmgr_export_to_csv(LBX_DATA * lbx)
     /* lbx_create_directory(lbx->file->export_directory_path); */
     // char strCSV[] = "CSV";
     // ats_build_file_path_and_name(&export_file_path, lbxmgr_data->export_directory_path, lbx->meta->file_name_base, strCSV);
-    ats_build_file_path_and_name(&export_file_path, lbxmgr_data->export_directory_path_csv, lbx->meta->file_name_base, export_file_extension_csv);
+    ats_build_file_path_and_name(&export_file_path, lbxmgr_data->export_directory_path_csv, lbx->meta->meta_file_name_base, export_file_extension_csv);
 
     if (LBXMGR_DEBUG_MODE) printf("DEBUG: export_file_path: %s\n", export_file_path);
 
@@ -44,7 +44,7 @@ void lbxmgr_export_to_csv(LBX_DATA * lbx)
      * Name
      */
 
-    fwrite(lbx->meta->file_name, strlen(lbx->meta->file_name), 1, ptr_stream_file_out);
+    fwrite(lbx->meta->meta_file_name, strlen(lbx->meta->meta_file_name), 1, ptr_stream_file_out);
 
     fwrite(",", strlen(","), 1, ptr_stream_file_out);
 
@@ -87,8 +87,8 @@ void lbxmgr_export_records_to_bin(LBX_DATA * lbx)
     if (LBXMGR_DEBUG_MODE) printf("DEBUG: BEGIN: lbx_export_entries_to_bin()\n");
 
     create_export_directory_path();
-    if (LBXMGR_DEBUG_MODE) printf("DEBUG: lbx->meta->file_name_base: %s\n", lbx->meta->file_name_base);
-    create_export_directory_path_bin(lbx->meta->file_name_base);
+    if (LBXMGR_DEBUG_MODE) printf("DEBUG: lbx->meta->file_name_base: %s\n", lbx->meta->meta_file_name_base);
+    create_export_directory_path_bin(lbx->meta->meta_file_name_base);
 
     int record_size;
     FILE * ptr_stream_file_out;
@@ -96,10 +96,10 @@ void lbxmgr_export_records_to_bin(LBX_DATA * lbx)
     int itr_record_bytes;
     for (itr_record_bytes = 0; itr_record_bytes < lbx->header->entry_count; itr_record_bytes++)
     {
-        record_size = lbx->meta->records->entry[itr_record_bytes].size;
+        record_size = lbx->meta->records->entry[itr_record_bytes].meta_size;
 
         // ats_build_file_path_and_name(&export_file_path, lbx->file->export_directory_path_bin, lbx->meta->records->entry[itr_record_bytes].record_file_name_base, export_file_extension_bin);
-        ats_build_file_path_and_name(&export_file_path, lbxmgr_data->export_directory_path_bin, lbx->meta->records->entry[itr_record_bytes].record_file_name_base, export_file_extension_bin);
+        ats_build_file_path_and_name(&export_file_path, lbxmgr_data->export_directory_path_bin, lbx->meta->records->entry[itr_record_bytes].meta_record_file_name_base, export_file_extension_bin);
 
         if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: export_file_path: %s\n", export_file_path);
 
@@ -144,7 +144,7 @@ void lbxmgr_export_records_to_c(LBX_DATA * lbx)
     int len_tmp_field_bytes;
 
     create_export_directory_path();
-    create_export_directory_path_c(lbx->meta->file_name_base);
+    create_export_directory_path_c(lbx->meta->meta_file_name_base);
 
     /* int record_size; */
     /* FILE * ptr_stream_file_out; */
@@ -165,9 +165,9 @@ void lbxmgr_export_records_to_c(LBX_DATA * lbx)
     for (itr_records = 0; itr_records < lbx->header->entry_count; itr_records++)
     {
 
-        if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: lbx->records->entry[%d].record_file_name_base: %s\n", itr_records, lbx->meta->records->entry[itr_records].record_file_name_base);
+        if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: lbx->records->entry[%d].record_file_name_base: %s\n", itr_records, lbx->meta->records->entry[itr_records].meta_record_file_name_base);
 
-        int record_size = lbx->meta->records->entry[itr_records].size;
+        int record_size = lbx->meta->records->entry[itr_records].meta_size;
         if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: record_size: %d\n", record_size);
 
         if (record_size == 0)
@@ -177,7 +177,7 @@ void lbxmgr_export_records_to_c(LBX_DATA * lbx)
         }
 
         strcpy(export_file_path, lbxmgr_data->export_directory_path);
-        strcat(export_file_path, lbx->meta->records->entry[itr_records].record_file_name_base);
+        strcat(export_file_path, lbx->meta->records->entry[itr_records].meta_record_file_name_base);
         strcat(export_file_path, ".");
         strcat(export_file_path, "C");
         if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: export_file_path: %s\n", export_file_path);
@@ -461,7 +461,7 @@ void lbxmgr_export_records_to_hex(LBX_DATA * lbx)
     if (LBXMGR_DEBUG_MODE) printf("DEBUG: BEGIN: lbxmgr_export_records_to_hex()\n");
 
     create_export_directory_path();
-    create_export_directory_path_hex(lbx->meta->file_name_base);
+    create_export_directory_path_hex(lbx->meta->meta_file_name_base);
 
     int record_size;
     FILE * ptr_stream_file_out;
@@ -469,10 +469,10 @@ void lbxmgr_export_records_to_hex(LBX_DATA * lbx)
     int itr_record_bytes;
     for (itr_record_bytes = 0; itr_record_bytes < lbx->header->entry_count; itr_record_bytes++)
     {
-        record_size = lbx->meta->records->entry[itr_record_bytes].size;
+        record_size = lbx->meta->records->entry[itr_record_bytes].meta_size;
 
         strcpy(export_file_path, lbxmgr_data->export_directory_path);
-        strcat(export_file_path, lbx->meta->records->entry[itr_record_bytes].record_file_name_base);
+        strcat(export_file_path, lbx->meta->records->entry[itr_record_bytes].meta_record_file_name_base);
         strcat(export_file_path, ".");
         strcat(export_file_path, "HEX");
         if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: export_file_path: %s\n", export_file_path);

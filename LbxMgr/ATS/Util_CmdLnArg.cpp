@@ -16,7 +16,7 @@ void display_program_usage_help()
 {
 	if (PrOpPa->DEBUG_MODE) std::cout << "DEBUG: BEGIN: display_program_usage_help()" << std::endl;
 
-	const char* program_usage_help_text = "Usage: ExeExplore.exe -f <file_path_and_name>\n";
+	const char* program_usage_help_text = "Usage: LbxMgr.exe -f <file_path_and_name>\n";
 	std::cout << program_usage_help_text << std::endl;
 
 	if (PrOpPa->DEBUG_MODE) std::cout << "DEBUG: END: display_program_usage_help()" << std::endl;

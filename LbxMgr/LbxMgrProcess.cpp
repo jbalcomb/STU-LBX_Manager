@@ -158,7 +158,7 @@ void lbxmgr_process_lbx(FILE_NAMES * filenames)
     {
 
         /* File Name */
-        fwrite(lbxmgr_data->lbx_data_array[itr_filenames]->meta->file_name, strlen(lbxmgr_data->lbx_data_array[itr_filenames]->meta->file_name), 1, export_lbx_all_files_csv);
+        fwrite(lbxmgr_data->lbx_data_array[itr_filenames]->meta->meta_file_name, strlen(lbxmgr_data->lbx_data_array[itr_filenames]->meta->meta_file_name), 1, export_lbx_all_files_csv);
         fwrite(",", strlen(","), 1, export_lbx_all_files_csv);
         /* Entry Count */
         fwrite(lbxmgr_data->lbx_data_array[itr_filenames]->meta->entry_count_string_dec, strlen(lbxmgr_data->lbx_data_array[itr_filenames]->meta->entry_count_string_dec), 1, export_lbx_all_files_csv);
@@ -244,7 +244,7 @@ void lbxmgr_process_lbx(FILE_NAMES * filenames)
             fwrite(",", strlen(","), 1, export_lbx_all_files_all_records_csv);
 
             /* File Name */
-            fwrite(lbxmgr_data->lbx_data_array[itr_filenames]->meta->file_name, strlen(lbxmgr_data->lbx_data_array[itr_filenames]->meta->file_name), 1, export_lbx_all_files_csv);
+            fwrite(lbxmgr_data->lbx_data_array[itr_filenames]->meta->meta_file_name, strlen(lbxmgr_data->lbx_data_array[itr_filenames]->meta->meta_file_name), 1, export_lbx_all_files_csv);
             fwrite(",", strlen(","), 1, export_lbx_all_files_csv);
             /* Entry Count */
             fwrite(lbxmgr_data->lbx_data_array[itr_filenames]->meta->entry_count_string_dec, strlen(lbxmgr_data->lbx_data_array[itr_filenames]->meta->entry_count_string_dec), 1, export_lbx_all_files_csv);

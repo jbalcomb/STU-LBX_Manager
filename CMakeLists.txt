@@ -8,18 +8,19 @@ set(LBXMGR_SOURCES
         LbxMgr/LbxMgr.h
         LbxMgr/LbxMgrExport.cpp
         LbxMgr/LbxMgrExport.h
-        LbxMgr/LbxMgrProcess.cpp
-        LbxMgr/LbxMgrProcess.h
         LbxMgr/LbxMgrPathsNames.cpp
         LbxMgr/LbxMgrPathsNames.h
-        LbxMgr/ATS/Util_ProgOperParm.cpp
-        LbxMgr/ATS/Util_ProgOperParm.h
-        LbxMgr/ATS/Util_CmdLnArg.cpp
-        LbxMgr/ATS/Util_CmdLnArg.h
+        LbxMgr/LbxMgrProcess.cpp
+        LbxMgr/LbxMgrProcess.h
+        LbxMgr/ATS/ats.h
         LbxMgr/ATS/ats_filenames.c
         LbxMgr/ATS/ats_filenames.h
         LbxMgr/ATS/ats_filesystem.c
-        LbxMgr/ATS/ats_filesystem.h)
+        LbxMgr/ATS/ats_filesystem.h
+        LbxMgr/ATS/Util_CmdLnArg.cpp
+        LbxMgr/ATS/Util_CmdLnArg.h
+        LbxMgr/ATS/Util_ProgOperParm.cpp
+        LbxMgr/ATS/Util_ProgOperParm.h)
 
 set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} C:/Development/STU-LBX_Library/cmake-build-debug)
 find_library(LIBLBX_LOCATION LibLBX)
