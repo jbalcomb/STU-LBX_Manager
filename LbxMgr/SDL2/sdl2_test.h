@@ -1,0 +1,6 @@
+#ifndef STU_LBX_MANAGER_SDL2_TEST_H
+#define STU_LBX_MANAGER_SDL2_TEST_H
+
+void sdl2_test();
+
+#endif //STU_LBX_MANAGER_SDL2_TEST_H

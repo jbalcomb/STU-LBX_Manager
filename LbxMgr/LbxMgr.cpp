@@ -13,6 +13,9 @@
 #include "LbxMgrProcess.h"
 #include "ATS/Util_ProgOperParm.h"
 #include "ATS/ats_filenames.h"
+#include "SDL2/sdl2_test.h"
+#include "SDL2/palette_viewer.h"
+
 
 LBXMGR_DATA * lbxmgr_data;
 
@@ -43,6 +46,8 @@ int main(int argc, char *argv[], char *env[])
 {
     if (LBXMGR_DEBUG_MODE) std::cout << "DEBUG: BEGIN: main()" << std::endl;
 
+    //sdl2_test();
+    //palette_viewer();
     initialize_program(argc, argv, env);
 
     if (LBXMGR_DEBUG_MODE) std::cout << "DEBUG: END: main()" << std::endl;

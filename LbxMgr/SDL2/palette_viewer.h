@@ -1,0 +1,6 @@
+#ifndef STU_LBX_LIBRARY_PALETTE_VIEWER_H
+#define STU_LBX_LIBRARY_PALETTE_VIEWER_H
+
+int palette_viewer();
+
+#endif //STU_LBX_LIBRARY_PALETTE_VIEWER_H
