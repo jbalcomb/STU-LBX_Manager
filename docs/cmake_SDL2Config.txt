@@ -1,0 +1,23 @@
+"F:\Program Files\JetBrains\CLion 2020.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Development\LbxMgr
+CMake Error at CMakeLists.txt:11 (find_package):
+  By not providing "FindSDL2.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "SDL2", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "SDL2" with any of
+  the following names:
+
+    SDL2Config.cmake
+    sdl2-config.cmake
+
+  Add the installation prefix of "SDL2" to CMAKE_PREFIX_PATH or set
+  "SDL2_DIR" to a directory containing one of the above files.  If "SDL2"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Development/LbxMgr/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+
+[Finished]
+            
