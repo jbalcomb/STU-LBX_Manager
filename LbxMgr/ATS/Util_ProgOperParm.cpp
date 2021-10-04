@@ -21,6 +21,7 @@ int create_program(int argc, char * argv[], char * env[])
 
     PrOpPa->DEBUG_MODE = 0;
     PrOpPa->DEBUG_VERBOSE_MODE = 0;
+    PrOpPa->DEBUG_STRUGGLE_MODE = 0;
 
     if (PrOpPa_Debug_Mode == 1)
     {
@@ -97,4 +98,15 @@ void set_debug_verbose_mode()
     std::cout << "DEBUG: Debug Verbose Mode Enabled" << std::endl;
 
     if (PrOpPa_Debug_Mode) std::cout << "DEBUG: END: set_debug_verbose_mode()" << std::endl;
+}
+
+void set_debug_struggle_mode()
+{
+    if (PrOpPa_Debug_Mode) std::cout << "DEBUG: BEGIN: set_debug_struggle_mode()" << std::endl;
+
+    PrOpPa->DEBUG_STRUGGLE_MODE = 1;
+
+    std::cout << "DEBUG: Debug Struggle Mode Enabled" << std::endl;
+
+    if (PrOpPa_Debug_Mode) std::cout << "DEBUG: END: set_debug_struggle_mode()" << std::endl;
 }

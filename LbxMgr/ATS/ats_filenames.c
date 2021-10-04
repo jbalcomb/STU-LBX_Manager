@@ -166,6 +166,7 @@ void populate_filenames_from_directory_path(FILE_NAMES * filenames, char * direc
         exit(1);
     }
 
+    /* TODO(JWB): figure out why I put "...-/+ 3" here and document it properly */
     tmp_directory_path = malloc(sizeof(char) * (strlen(filenames->directory_path) + 3));
     strcpy(tmp_directory_path, filenames->directory_path);
     strcat(tmp_directory_path, "\\*");

@@ -1,94 +1,35 @@
 // #include <stdio.h>          /* fclose(), fopen(), fread(), fwrite(), printf(); FILE */
-#include <cstdio>
+#include <cstdio>          /* fclose(), fopen(), fread(), fwrite(), printf(); FILE */
 // #include <string.h>         /* memcpy(), strcat(), strcpy(), strncpy(), strlen(); */
 #include <cstring>
 // #include <malloc.h>         /* malloc(), realloc(); */
 #include <cstdlib>              // malloc()
 
+#include <iomanip>
+#include <iostream>
+#include <fstream>
+
+
 #include "LbxMgrExport.h"
 #include "LbxMgr.h"
-#include "LbxMgrPathsNames.h"
+#include "LbxMgrPathsNames.h"  // create_export_directory_path();
 #include "lib_lbx.h"
+#include "lib_lbx_record_image.h"
+#include <lib_lbx_record_display.h>
+#include <lib_lbx_record_palette.h>
+#include <lib_lbx_unbrun.h>
 #include "ATS/ats_filesystem.h"
+#include "ATS/Util_Generic.h"
+#include "ATS/ats_file_type_bmp.h"
 
-
-
-void lbxmgr_export_to_csv(LBX_DATA * lbx)
-{
-    if (LBXMGR_DEBUG_MODE) printf("DEBUG: BEGIN: lbxmgr_export_to_csv()\n");
-
-    create_export_directory_path();
-    if (LBXMGR_DEBUG_MODE) printf("DEBUG: lbx->meta->file_name_base: %s\n", lbx->meta->meta_file_name_base);
-    create_export_directory_path_csv(lbx->meta->meta_file_name_base);
-
-
-    char * export_file_path;
-
-    /* lbx_create_directory(lbx->file->export_directory_path); */
-    // char strCSV[] = "CSV";
-    // ats_build_file_path_and_name(&export_file_path, lbxmgr_data->export_directory_path, lbx->meta->file_name_base, strCSV);
-    ats_build_file_path_and_name(&export_file_path, lbxmgr_data->export_directory_path_csv, lbx->meta->meta_file_name_base, export_file_extension_csv);
-
-    if (LBXMGR_DEBUG_MODE) printf("DEBUG: export_file_path: %s\n", export_file_path);
-
-
-    FILE * ptr_stream_file_out;
-
-    ptr_stream_file_out = fopen(export_file_path, "wb");
-
-    char csv_info_headings[] = "File_Name,Entry_Count,LBX_Type,File_Size,File_Date,String_Table,Header_Length,Offset_BOD,CRC32\n";
-
-    fwrite(csv_info_headings, strlen(csv_info_headings), 1, ptr_stream_file_out);
-
-    /*
-     * Name
-     */
-
-    fwrite(lbx->meta->meta_file_name, strlen(lbx->meta->meta_file_name), 1, ptr_stream_file_out);
-
-    fwrite(",", strlen(","), 1, ptr_stream_file_out);
-
-    /*
-     * Type
-     */
-
-    int len_lbx_type = snprintf(nullptr, 0, "%d", lbx->header->type);
-    char* str_lbx_type = (char *)malloc(len_lbx_type + 1);
-    snprintf(str_lbx_type, len_lbx_type + 1, "%d", lbx->header->type);
-    fwrite(str_lbx_type, strlen(str_lbx_type), 1, ptr_stream_file_out);
-
-    fwrite(",", strlen(","), 1, ptr_stream_file_out);
-
-    /*
-     * Entries
-     */
-
-    fwrite(lbx->meta->entry_count_string_dec, strlen(lbx->meta->entry_count_string_dec), 1, ptr_stream_file_out);
-
-    fwrite(",", strlen(","), 1, ptr_stream_file_out);
-
-    /*
-     * Size,Timestamp,Offset_BOD,Offset_EOD,Has_String_Table,Header_Length,Header_Padding_Length,CRC32,MD5,SHA1
-     */
-
-    fwrite(lbx->meta->file_checksum_crc32_string, strlen(lbx->meta->file_checksum_crc32_string), 1, ptr_stream_file_out);
-
-    fwrite(",", strlen(","), 1, ptr_stream_file_out);
-
-    fwrite("\n", strlen("\n"), 1, ptr_stream_file_out);
-
-    fclose(ptr_stream_file_out);
-
-    if (LBXMGR_DEBUG_MODE) printf("DEBUG: END: lbxmgr_export_to_csv()\n");
-}
 
 void lbxmgr_export_records_to_bin(LBX_DATA * lbx)
 {
     if (LBXMGR_DEBUG_MODE) printf("DEBUG: BEGIN: lbx_export_entries_to_bin()\n");
 
     create_export_directory_path();
-    if (LBXMGR_DEBUG_MODE) printf("DEBUG: lbx->meta->file_name_base: %s\n", lbx->meta->meta_file_name_base);
-    create_export_directory_path_bin(lbx->meta->meta_file_name_base);
+    if (LBXMGR_DEBUG_MODE) printf("DEBUG: lbx->file->file_name_base: %s\n", lbx->file->file_name_base);
+    create_export_directory_path_bin(lbx->file->file_name_base);
 
     int record_size;
     FILE * ptr_stream_file_out;
@@ -96,10 +37,10 @@ void lbxmgr_export_records_to_bin(LBX_DATA * lbx)
     int itr_record_bytes;
     for (itr_record_bytes = 0; itr_record_bytes < lbx->header->entry_count; itr_record_bytes++)
     {
-        record_size = lbx->meta->records->entry[itr_record_bytes].meta_size;
+        record_size = lbx->record->entry[itr_record_bytes].size;
 
         // ats_build_file_path_and_name(&export_file_path, lbx->file->export_directory_path_bin, lbx->meta->records->entry[itr_record_bytes].record_file_name_base, export_file_extension_bin);
-        ats_build_file_path_and_name(&export_file_path, lbxmgr_data->export_directory_path_bin, lbx->meta->records->entry[itr_record_bytes].meta_record_file_name_base, export_file_extension_bin);
+        ats_build_file_path_and_name(&export_file_path, lbxmgr_data->export_directory_path_bin, lbx->record->entry[itr_record_bytes].record_file_name_base, export_file_extension_bin);
 
         if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: export_file_path: %s\n", export_file_path);
 
@@ -110,16 +51,269 @@ void lbxmgr_export_records_to_bin(LBX_DATA * lbx)
             printf("DEBUG: errno: %d strerror: %s\n", errno, strerror(errno));
         }
 
-        fseek(lbx->file_stream, lbx->header->offset_table->entry[itr_record_bytes].begin, SEEK_SET);
+        fseek(lbx->file->file_stream, lbx->header->offset_table->entry[itr_record_bytes].begin, SEEK_SET);
 
         char * lbx_read_buffer;
         lbx_read_buffer = (char *)malloc(sizeof(char) * (record_size + 1));
-        fread(lbx_read_buffer, record_size, 1, lbx->file_stream);
+        fread(lbx_read_buffer, record_size, 1, lbx->file->file_stream);
         fwrite(lbx_read_buffer, record_size, 1, ptr_stream_file_out);
         fclose(ptr_stream_file_out);
     }
 
     if (LBXMGR_DEBUG_MODE) printf("DEBUG: END: lbx_export_entries_to_bin()\n");
+}
+
+int lbxmgr_export_records_to_bmp(LBX_DATA * lbx)
+{
+    if (LBXMGR_DEBUG_MODE) printf("DEBUG: BEGIN: lbxmgr_export_records_to_bmp()\n");
+
+    create_export_directory_path();
+
+    create_export_directory_path_bmp(lbx->file->file_name_base);
+
+//    /*LBX_PALETTE * lbx_palette;*/
+//    lbx_uint8 * lbx_palette;
+//    /* lbx_palette = (LBX_PALETTE*)malloc(LBX_PALETTE_SIZE); */
+//    lbx_palette = lbx_load_palette_by_number(2);
+//    if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: lbx_palette: %x\n", lbx_palette);
+
+    unsigned char * lbx_palette;
+    lbx_palette = liblbx_load_palette(g_palette_file_path, EMPERATO);
+
+
+
+    char * export_file_path;
+    int itr_entry_index;
+
+    for (itr_entry_index = 0; itr_entry_index < lbx->header->entry_count; itr_entry_index++)
+    {
+        printf("%s (%d of %d) [%s]\n", lbx->file->file_name, itr_entry_index + 1, lbx->header->entry_count, lbx->header->string_table->entry[itr_entry_index].name);
+        // display_lbx_image_header(lbx, itr_entry_index);
+        // display_lbx_image_custom_palette_header(lbx, itr_entry_index);
+
+        // ats_build_file_path_and_name(&export_file_path, lbx->file->export_directory_path_bin, lbx->record->entry[itr_entry_index].record_file_name_base, export_file_extension_bin);
+        ats_build_file_path_and_name(&export_file_path, lbxmgr_data->export_directory_path_bmp, lbx->record->entry[itr_entry_index].record_file_name_base, export_file_extension_bmp);
+
+        if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: export_file_path: %s\n", export_file_path);
+
+        FILE * ptr_stream_file_out;
+        ptr_stream_file_out = fopen(export_file_path, "wb");
+
+        if (ptr_stream_file_out == nullptr) {
+            printf("FAILURE: could not open file\n");
+            printf("DEBUG: errno: %d strerror: %s\n", errno, strerror(errno));
+        }
+
+        /*
+        char l_LBX_Record_Type_Description[13][34] = {
+                "EMPTY",
+                "Array",
+                "XMIDI",
+                "VOC",
+                "Sound",
+                "Palette",
+                "Image",
+                "Font",
+                "AIL Driver",
+                "DIGPAK Driver",
+                "Custom",
+                "UNKNOWN",
+                "Animation"
+        };
+        if (LBXMGR_DEBUG_VERBOSE_MODE) printf("DEBUG: Record Type: (%d) %s\n", lbx->record->entry[itr_entry_index].type, l_LBX_Record_Type_Description[lbx->record->entry[itr_entry_index].type]);
+        */
+        if (LBXMGR_DEBUG_VERBOSE_MODE) printf("DEBUG: Record Type: (%d) %s\n", lbx->record->entry[itr_entry_index].type, LBX_Record_Type_Description[lbx->record->entry[itr_entry_index].type]);
+
+        // if (lbx->record->entry[itr_entry_index].type == LBX_RECORD_TYPE_IMAGE)
+        if (lbx->record->entry[itr_entry_index].type == LBX_RECORD_TYPE_FLIC)
+        {
+            fseek(lbx->file->file_stream, lbx->header->offset_table->entry[itr_entry_index].begin, SEEK_SET);
+
+            char * image_record_data;
+            image_record_data = (char *)malloc(sizeof(char) * (lbx->record->entry[itr_entry_index].size + 1));
+            fread(image_record_data, lbx->record->entry[itr_entry_index].size, 1, lbx->file->file_stream);
+
+            /* TODO(JWB): maybe, figure out how to just have pointers to image_record_data for the key locations - header and data starting positions */
+
+
+
+
+            // void lbx_load_image_record(const lbx_uint8 * dst, lbx_uint8 * src)
+            LBX_FLIC_RECORD_HEADER * lbx_image_record;
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: BEGIN: lbx_image_record = (LBX_IMAGE_RECORD *)malloc(sizeof *lbx_image_record);\n");
+            lbx_image_record = (LBX_FLIC_RECORD_HEADER *)malloc(sizeof *lbx_image_record);
+            if (lbx_image_record == nullptr)
+            {
+                printf("FAILURE: lbx_image_record = (LBX_IMAGE_RECORD *)malloc(%u);\n", sizeof *lbx_image_record);
+                exit(EXIT_FAILURE);
+            }
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: END: lbx_image_record = (LBX_IMAGE_RECORD *)malloc(sizeof *lbx_image_record);\n");
+
+            lbx_load_image_record(lbx_image_record, image_record_data);
+
+
+
+
+
+            int bmp_image_size;
+            bmp_image_size = lbx_image_record->lbx_flic_info_header->frame_width * lbx_image_record->lbx_flic_info_header->frame_height;
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: bmp_image_size: %d\n", bmp_image_size);
+
+            int bmp_color_data_length;
+            bmp_color_data_length = BMP_PALETTE_6BPP_COLOR_COUNT * BMP_PALETTE_6BPP_BYTES_PER_COLOR;  /* 256 colors */
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: bmp_color_data_length: %d\n", bmp_color_data_length);
+
+            int bmp_header_length_total;
+            bmp_header_length_total = BMP_BITMAP_FILE_HEADER_LENGTH + BMP_BITMAP_INFO_HEADER_LENGTH;
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: bmp_header_length_total: %d\n", bmp_header_length_total);
+
+            int bmp_file_size;
+            bmp_file_size = bmp_image_size + bmp_color_data_length + bmp_header_length_total; /* BMP File Size = Pixel image_data_buffer(Width * Height) + Color image_data_buffer(RGB * 4) + Header(14 + 40)*/
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: bmp_file_size: %d\n", bmp_file_size);
+
+
+
+            BMP_FILE * bmp_file;
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: BEGIN: bmp_file = (BMP_FILE *)malloc(sizeof(BMP_FILE));\n");
+            /* TODO(JWB): research this (sizeof *bmp_file) approach more; figure out how to apply it to structure member structures */
+            bmp_file = (BMP_FILE *)malloc(sizeof *bmp_file);
+            if (bmp_file == nullptr)
+            {
+                printf("FAILURE: bmp_file = (BMP_FILE *)malloc(sizeof *bmp_file);\n", sizeof *bmp_file);
+                exit(EXIT_FAILURE);
+            }
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: END: bmp_file = (BMP_FILE *)malloc(sizeof(BMP_FILE));\n");
+
+
+
+            BMP_PALETTE * bmp_palette_bytes_buffer;
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: BEGIN: bmp_palette_bytes_buffer = (BMP_PALETTE *)malloc(BMP_PALETTE_SIZE);\n");
+            bmp_palette_bytes_buffer = (BMP_PALETTE *)malloc(BMP_PALETTE_SIZE);
+            if (bmp_file == nullptr)
+            {
+                printf("FAILURE: bmp_palette_bytes_buffer = (BMP_PALETTE *)malloc(%u);\n", BMP_PALETTE_SIZE);
+                exit(EXIT_FAILURE);
+            }
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: END: bmp_palette_bytes_buffer = (BMP_PALETTE *)malloc(BMP_PALETTE_SIZE);\n");
+
+
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: BEGIN: bmp_palette_bytes_buffer[ ] = lbx_palette[ ]\n");
+            int itr_bmp_bgrx_quad;
+            for (itr_bmp_bgrx_quad = 0; itr_bmp_bgrx_quad < 256; itr_bmp_bgrx_quad++)
+            {
+                bmp_palette_bytes_buffer[((itr_bmp_bgrx_quad * 4) + 0)] = 0x00;
+                bmp_palette_bytes_buffer[((itr_bmp_bgrx_quad * 4) + 1)] = lbx_palette[((itr_bmp_bgrx_quad * 4) + (-itr_bmp_bgrx_quad + 2))];
+                bmp_palette_bytes_buffer[((itr_bmp_bgrx_quad * 4) + 2)] = lbx_palette[((itr_bmp_bgrx_quad * 4) + (-itr_bmp_bgrx_quad + 1))];
+                bmp_palette_bytes_buffer[((itr_bmp_bgrx_quad * 4) + 3)] = lbx_palette[((itr_bmp_bgrx_quad * 4) + (-itr_bmp_bgrx_quad + 0))];
+                /*
+                if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: bmp_palette_bytes_buffer[%u] = %u\n", ((itr_bmp_bgrx_quad * 4) + 0), 0x00);
+                if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: bmp_palette_bytes_buffer[%u] = lbx_palette[%u]\n", ((itr_bmp_bgrx_quad * 4) + 1), ((itr_bmp_bgrx_quad * 4) + (-itr_bmp_bgrx_quad + 2)));
+                if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: bmp_palette_bytes_buffer[%u] = lbx_palette[%u]\n", ((itr_bmp_bgrx_quad * 4) + 2), ((itr_bmp_bgrx_quad * 4) + (-itr_bmp_bgrx_quad + 1)));
+                if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: bmp_palette_bytes_buffer[%u] = lbx_palette[%u]\n", ((itr_bmp_bgrx_quad * 4) + 3), ((itr_bmp_bgrx_quad * 4) + (-itr_bmp_bgrx_quad + 0)));
+                 */
+            }
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: END: bmp_palette_bytes_buffer[ ] = lbx_palette[ ]\n");
+
+
+
+            char * bmp_image_bytes_buffer;
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: BEGIN: bmp_image_bytes_buffer = (char *)malloc(bmp_image_size);\n");
+            bmp_image_bytes_buffer = (char *)malloc(bmp_image_size);
+            if (bmp_file == nullptr)
+            {
+                printf("FAILURE: bmp_image_bytes_buffer = (char *)malloc(%u);\n", bmp_image_size);
+                exit(EXIT_FAILURE);
+            }
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: END: bmp_image_bytes_buffer = (char *)malloc(bmp_image_size);\n");
+
+
+
+            /* ******************* *
+             *                     *
+             *   END: MS BMP/DIB   *
+             *                     *
+             * ******************* */
+
+
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: BEGIN: fwrite(&(bmp_file->bmp_bitmap_file_header->), sizeof(bmp_file->bmp_bitmap_file_header->), 1, ptr_stream_file_out);\n");
+
+            fwrite(&(bmp_file->bmp_bitmap_file_header->bfType), sizeof(bmp_file->bmp_bitmap_file_header->bfType), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_file_header->bfSize), sizeof(bmp_file->bmp_bitmap_file_header->bfSize), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_file_header->bfReserved1), sizeof(bmp_file->bmp_bitmap_file_header->bfReserved1), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_file_header->bfReserved2), sizeof(bmp_file->bmp_bitmap_file_header->bfReserved2), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_file_header->bfOffBits), sizeof(bmp_file->bmp_bitmap_file_header->bfOffBits), 1, ptr_stream_file_out);
+
+            fwrite(&(bmp_file->bmp_bitmap_info_header->biSize), sizeof(bmp_file->bmp_bitmap_info_header->biSize), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_info_header->biWidth), sizeof(bmp_file->bmp_bitmap_info_header->biWidth), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_info_header->biHeight), sizeof(bmp_file->bmp_bitmap_info_header->biHeight), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_info_header->biPlanes), sizeof(bmp_file->bmp_bitmap_info_header->biPlanes), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_info_header->biBitCount), sizeof(bmp_file->bmp_bitmap_info_header->biBitCount), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_info_header->biCompression), sizeof(bmp_file->bmp_bitmap_info_header->biCompression), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_info_header->biSizeImage), sizeof(bmp_file->bmp_bitmap_info_header->biSizeImage), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_info_header->biXPelsPerMeter), sizeof(bmp_file->bmp_bitmap_info_header->biXPelsPerMeter), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_info_header->biYPelsPerMeter), sizeof(bmp_file->bmp_bitmap_info_header->biYPelsPerMeter), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_info_header->biClrUsed), sizeof(bmp_file->bmp_bitmap_info_header->biClrUsed), 1, ptr_stream_file_out);
+            fwrite(&(bmp_file->bmp_bitmap_info_header->biClrImportant), sizeof(bmp_file->bmp_bitmap_info_header->biClrImportant), 1, ptr_stream_file_out);
+
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: END: fwrite(&(bmp_file->bmp_bitmap_file_header->), sizeof(bmp_file->bmp_bitmap_file_header->), 1, ptr_stream_file_out);\n");
+
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: BEGIN: fwrite(bmp_palette_bytes_buffer, sizeof(BMP_PALETTE), BMP_PALETTE_SIZE, ptr_stream_file_out);\n");
+            fwrite(bmp_palette_bytes_buffer, sizeof(BMP_PALETTE), BMP_PALETTE_SIZE, ptr_stream_file_out);
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: END: fwrite(bmp_palette_bytes_buffer, sizeof(BMP_PALETTE), BMP_PALETTE_SIZE, ptr_stream_file_out);\n");
+
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: BEGIN: fwrite(bmp_image_bytes_buffer, sizeof(lbx_uint8), bmp_image_size, ptr_stream_file_out);\n");
+            fwrite(bmp_image_bytes_buffer, sizeof(char), bmp_image_size, ptr_stream_file_out);
+            if (LBXMGR_DEBUG_STRUGGLE_MODE) printf("DEBUG: END: fwrite(bmp_image_bytes_buffer, sizeof(lbx_uint8), bmp_image_size, ptr_stream_file_out);\n");
+
+
+
+            /* J:\STU-EduMat\_FileFormats_OPC\pilrc-master\bitmap.c */
+            /*
+              // allocate memory for image data (word aligned)
+              cbRow = ((dx * cbitsPel + 15) & ~15) >> 3;
+              rcbmp->cbDst = (cbRow * dy) + colorDat;
+              rcbmp->pbBits = (unsigned char *)malloc(rcbmp->cbDst);
+              memset(rcbmp->pbBits, 0, rcbmp->cbDst);
+              ...
+              ...
+              ...
+              // do we need to consider transparency?
+              switch (transparencyData[0])
+              {
+                case rwTransparency:
+                  // rcbmp->ff |= 0x2000;
+                  rcbmp->flags.hasTransparency = fTrue;
+
+                  rcbmp->transparentIndex =
+                    BMP_RGBToColorIndex(transparencyData[1],
+                                        transparencyData[2],
+                                        transparencyData[3],
+                                        dstPalette, dstPaletteSize);
+                  break;
+
+                case rwTransparencyIndex:
+                  // rcbmp->ff |= 0x2000;
+                  rcbmp->flags.hasTransparency = fTrue;
+
+                  rcbmp->transparentIndex = transparencyData[1];
+                  break;
+
+                default:
+                  break;
+              }
+              break;
+             */
+        }
+        else
+        {
+            /* ptr += frameOffsets[frameNr]; */
+            printf("Apologies, but we are not yet able to process an 'Animation'.\n");
+        }
+        fclose(ptr_stream_file_out);
+    }
+
+    if (LBXMGR_DEBUG_MODE) printf("DEBUG: END: lbxmgr_export_records_to_bmp()\n");
+    return 0;
 }
 
 void lbxmgr_export_records_to_c(LBX_DATA * lbx)
@@ -144,7 +338,7 @@ void lbxmgr_export_records_to_c(LBX_DATA * lbx)
     int len_tmp_field_bytes;
 
     create_export_directory_path();
-    create_export_directory_path_c(lbx->meta->meta_file_name_base);
+    create_export_directory_path_c(lbx->file->file_name_base);
 
     /* int record_size; */
     /* FILE * ptr_stream_file_out; */
@@ -165,9 +359,9 @@ void lbxmgr_export_records_to_c(LBX_DATA * lbx)
     for (itr_records = 0; itr_records < lbx->header->entry_count; itr_records++)
     {
 
-        if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: lbx->records->entry[%d].record_file_name_base: %s\n", itr_records, lbx->meta->records->entry[itr_records].meta_record_file_name_base);
+        if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: lbx->records->entry[%d].record_file_name_base: %s\n", itr_records, lbx->record->entry[itr_records].record_file_name_base);
 
-        int record_size = lbx->meta->records->entry[itr_records].meta_size;
+        int record_size = lbx->record->entry[itr_records].size;
         if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: record_size: %d\n", record_size);
 
         if (record_size == 0)
@@ -177,7 +371,7 @@ void lbxmgr_export_records_to_c(LBX_DATA * lbx)
         }
 
         strcpy(export_file_path, lbxmgr_data->export_directory_path);
-        strcat(export_file_path, lbx->meta->records->entry[itr_records].meta_record_file_name_base);
+        strcat(export_file_path, lbx->record->entry[itr_records].record_file_name_base);
         strcat(export_file_path, ".");
         strcat(export_file_path, "C");
         if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: export_file_path: %s\n", export_file_path);
@@ -198,7 +392,7 @@ void lbxmgr_export_records_to_c(LBX_DATA * lbx)
         }
 
         if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: fseek() BEGIN\n");
-        fseek(lbx->file_stream, lbx->header->offset_table->entry[itr_records].begin, SEEK_SET);
+        fseek(lbx->file->file_stream, lbx->header->offset_table->entry[itr_records].begin, SEEK_SET);
         if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: fseek() END\n");
 
 
@@ -217,7 +411,7 @@ void lbxmgr_export_records_to_c(LBX_DATA * lbx)
         if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: END: tmp_lbx_read_buffer = realloc(lbx_read_buffer, %d)\n", record_size);
 
         if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: fread() BEGIN\n");
-        fread(lbx_read_buffer, record_size, 1, lbx->file_stream);
+        fread(lbx_read_buffer, record_size, 1, lbx->file->file_stream);
         if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: fread() END\n");
 
         /*
@@ -461,7 +655,7 @@ void lbxmgr_export_records_to_hex(LBX_DATA * lbx)
     if (LBXMGR_DEBUG_MODE) printf("DEBUG: BEGIN: lbxmgr_export_records_to_hex()\n");
 
     create_export_directory_path();
-    create_export_directory_path_hex(lbx->meta->meta_file_name_base);
+    create_export_directory_path_hex(lbx->file->file_name_base);
 
     int record_size;
     FILE * ptr_stream_file_out;
@@ -469,10 +663,10 @@ void lbxmgr_export_records_to_hex(LBX_DATA * lbx)
     int itr_record_bytes;
     for (itr_record_bytes = 0; itr_record_bytes < lbx->header->entry_count; itr_record_bytes++)
     {
-        record_size = lbx->meta->records->entry[itr_record_bytes].meta_size;
+        record_size = lbx->record->entry[itr_record_bytes].size;
 
         strcpy(export_file_path, lbxmgr_data->export_directory_path);
-        strcat(export_file_path, lbx->meta->records->entry[itr_record_bytes].meta_record_file_name_base);
+        strcat(export_file_path, lbx->record->entry[itr_record_bytes].record_file_name_base);
         strcat(export_file_path, ".");
         strcat(export_file_path, "HEX");
         if (LBX_DEBUG_VERBOSE_MODE) printf("DEBUG: export_file_path: %s\n", export_file_path);
@@ -489,14 +683,24 @@ void lbxmgr_export_records_to_hex(LBX_DATA * lbx)
             printf("DEBUG: errno: %d strerror: %s\n", errno, strerror(errno));
         }
 
-        fseek(lbx->file_stream, lbx->header->offset_table->entry[itr_record_bytes].begin, SEEK_SET);
+        fseek(lbx->file->file_stream, lbx->header->offset_table->entry[itr_record_bytes].begin, SEEK_SET);
 
         char * lbx_read_buffer;
         lbx_read_buffer = (char*)malloc(record_size);
-        fread(lbx_read_buffer, record_size, 1, lbx->file_stream);
+        fread(lbx_read_buffer, record_size, 1, lbx->file->file_stream);
         fwrite(lbx_read_buffer, record_size, 1, ptr_stream_file_out);
         fclose(ptr_stream_file_out);
     }
 
     if (LBXMGR_DEBUG_MODE) printf("DEBUG: END: lbxmgr_export_records_to_hex()\n");
+}
+
+void lbxmgr_export_records_to_gif(LBX_DATA * lbx)
+{
+    if (LBXMGR_DEBUG_MODE) printf("DEBUG: BEGIN: lbxmgr_export_records_to_gif()\n");
+
+    printf("This feature not yet implemented.\n");
+    exit(EXIT_SUCCESS);
+
+    if (LBXMGR_DEBUG_MODE) printf("DEBUG: END: lbxmgr_export_records_to_gif()\n");
 }

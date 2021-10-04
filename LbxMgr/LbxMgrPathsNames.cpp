@@ -32,6 +32,19 @@ void create_export_directory_path_bin(char * file_name_base)
     ats_create_directory(lbxmgr_data->export_directory_path_bin);
 }
 
+void create_export_directory_path_bmp(char * file_name_base)
+{
+    lbxmgr_data->export_directory_path_bmp = (char *)malloc(sizeof(char) * (strlen(lbxmgr_data->export_directory_path) + strlen(path_separator) + strlen(file_name_base) + strlen(path_separator) + strlen(export_directory_name_bmp) + 1));
+    strcpy(lbxmgr_data->export_directory_path_bmp, lbxmgr_data->export_directory_path);
+    ats_create_directory(lbxmgr_data->export_directory_path_bmp);
+    strcat(lbxmgr_data->export_directory_path_bmp, path_separator);
+    strcat(lbxmgr_data->export_directory_path_bmp, file_name_base);
+    ats_create_directory(lbxmgr_data->export_directory_path_bmp);
+    strcat(lbxmgr_data->export_directory_path_bmp, path_separator);
+    strcat(lbxmgr_data->export_directory_path_bmp, export_directory_name_bmp);
+    ats_create_directory(lbxmgr_data->export_directory_path_bmp);
+}
+
 void create_export_directory_path_c(char * file_name_base)
 {
     lbxmgr_data->export_directory_path_c = (char *)malloc(sizeof(char) * (strlen(lbxmgr_data->export_directory_path) + strlen(path_separator) + strlen(file_name_base) + strlen(path_separator) + strlen(export_directory_name_c) + 1));
@@ -69,4 +82,17 @@ void create_export_directory_path_hex(char * file_name_base)
     strcat(lbxmgr_data->export_directory_path_hex, path_separator);
     strcat(lbxmgr_data->export_directory_path_hex, export_directory_name_hex);
     ats_create_directory(lbxmgr_data->export_directory_path_hex);
+}
+
+void create_export_directory_path_gif(char * file_name_base)
+{
+    lbxmgr_data->export_directory_path_gif = (char *)malloc(sizeof(char) * (strlen(lbxmgr_data->export_directory_path) + strlen(path_separator) + strlen(file_name_base) + strlen(path_separator) + strlen(export_directory_name_gif) + 1));
+    strcpy(lbxmgr_data->export_directory_path_gif, lbxmgr_data->export_directory_path);
+    ats_create_directory(lbxmgr_data->export_directory_path_gif);
+    strcat(lbxmgr_data->export_directory_path_gif, path_separator);
+    strcat(lbxmgr_data->export_directory_path_gif, file_name_base);
+    ats_create_directory(lbxmgr_data->export_directory_path_gif);
+    strcat(lbxmgr_data->export_directory_path_gif, path_separator);
+    strcat(lbxmgr_data->export_directory_path_gif, export_directory_name_gif);
+    ats_create_directory(lbxmgr_data->export_directory_path_gif);
 }
