@@ -24,12 +24,12 @@ set(LBXMGR_SOURCES
         LbxMgr/ATS/ats_filesystem.h
         #LbxMgr/MoMRTGT__convertLbxToImages.cpp
         #LbxMgr/MoMRTGT__convertLbxToImages.h
-        LbxMgr/LbxMgrDecodeRunLengthEncoded.cpp
-        LbxMgr/LbxMgrDecodeRunLengthEncoded.h
-        LbxMgr/ATS/ats_file_type_bmp.c
-        LbxMgr/ATS/ats_file_type_bmp.h
-        LbxMgr/ATS/ats_file_type_colormap.c
-        LbxMgr/ATS/ats_file_type_colormap.h
+        #LbxMgr/LbxMgrDecodeRunLengthEncoded.cpp
+        #LbxMgr/LbxMgrDecodeRunLengthEncoded.h
+        #LbxMgr/ATS/ats_file_type_bmp.c
+        #LbxMgr/ATS/ats_file_type_bmp.h
+        #LbxMgr/ATS/ats_file_type_colormap.c
+        #LbxMgr/ATS/ats_file_type_colormap.h
         LbxMgr/MoM131/MoM_131_LBX_Files.h
         LbxMgr/LBX_Library_FrontEnd/ClassLBX.cpp
         LbxMgr/LBX_Library_FrontEnd/ClassLBX.h
@@ -37,12 +37,13 @@ set(LBXMGR_SOURCES
         LbxMgr/LbxMgrLoadLbxData.h
         LbxMgr/LbxMgrExportCsv.cpp
         LbxMgr/LbxMgrExportCsv.h
-        LbxMgr/LbxMgrExportGraphics.cpp
-        LbxMgr/LbxMgrExportGraphics.h
+        #LbxMgr/LbxMgrExportGraphics.cpp
+        #LbxMgr/LbxMgrExportGraphics.h
         LbxMgr/ATS/ats_cli_menu.cpp
         LbxMgr/ATS/ats_cli_menu.h
         LbxMgr/LbxMgrTest.cpp
-        LbxMgr/LbxMgrTest.h)
+        LbxMgr/LbxMgrTest.h
+        )
 
 set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} C:/Development/STU-LBX_Library/cmake-build-debug)
 find_library(LIBLBX_LOCATION LibLBX)
