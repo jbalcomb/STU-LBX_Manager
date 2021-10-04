@@ -8,70 +8,76 @@ set(LBXMGR_SOURCES
         LbxMgr/LbxMgr.h
         LbxMgr/LbxMgrExport.cpp
         LbxMgr/LbxMgrExport.h
+        #LbxMgr/LbxMgrProcess_v1.cpp
+        #LbxMgr/LbxMgrProcess_v1.h
+        LbxMgr/LbxMgrProcess_v2.cpp
+        LbxMgr/LbxMgrProcess_v2.h
         LbxMgr/LbxMgrPathsNames.cpp
         LbxMgr/LbxMgrPathsNames.h
-        LbxMgr/LbxMgrProcess.cpp
-        LbxMgr/LbxMgrProcess.h
-        LbxMgr/ATS/ats.h
+        LbxMgr/ATS/Util_ProgOperParm.cpp
+        LbxMgr/ATS/Util_ProgOperParm.h
+        LbxMgr/ATS/Util_CmdLnArg.cpp
+        LbxMgr/ATS/Util_CmdLnArg.h
         LbxMgr/ATS/ats_filenames.c
         LbxMgr/ATS/ats_filenames.h
         LbxMgr/ATS/ats_filesystem.c
         LbxMgr/ATS/ats_filesystem.h
-        LbxMgr/ATS/Util_CmdLnArg.cpp
-        LbxMgr/ATS/Util_CmdLnArg.h
-        LbxMgr/ATS/Util_ProgOperParm.cpp
-        LbxMgr/ATS/Util_ProgOperParm.h
-        LbxMgr/SDL2/sdl2_test.cpp
-        LbxMgr/SDL2/sdl2_test.h
-        LbxMgr/SDL2/palette_viewer.cpp
-        LbxMgr/SDL2/palette_viewer.h
-        LbxMgr/SDL2/sdl_colormap.cpp
-        LbxMgr/SDL2/sdl_colormap.h
-        LbxMgr/SDL2/mom_main_colormap.h)
-
-# message(WARNING CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH})
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
-# message(WARNING CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH})
+        #LbxMgr/MoMRTGT__convertLbxToImages.cpp
+        #LbxMgr/MoMRTGT__convertLbxToImages.h
+        LbxMgr/LbxMgrDecodeRunLengthEncoded.cpp
+        LbxMgr/LbxMgrDecodeRunLengthEncoded.h
+        LbxMgr/ATS/ats_file_type_bmp.c
+        LbxMgr/ATS/ats_file_type_bmp.h
+        LbxMgr/ATS/ats_file_type_colormap.c
+        LbxMgr/ATS/ats_file_type_colormap.h
+        LbxMgr/MoM131/MoM_131_LBX_Files.h
+        LbxMgr/LBX_Library_FrontEnd/ClassLBX.cpp
+        LbxMgr/LBX_Library_FrontEnd/ClassLBX.h
+        LbxMgr/LbxMgrLoadLbxData.cpp
+        LbxMgr/LbxMgrLoadLbxData.h
+        LbxMgr/LbxMgrExportCsv.cpp
+        LbxMgr/LbxMgrExportCsv.h
+        LbxMgr/LbxMgrExportGraphics.cpp
+        LbxMgr/LbxMgrExportGraphics.h
+        LbxMgr/ATS/ats_cli_menu.cpp
+        LbxMgr/ATS/ats_cli_menu.h
+        LbxMgr/LbxMgrTest.cpp
+        LbxMgr/LbxMgrTest.h)
 
 set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} C:/Development/STU-LBX_Library/cmake-build-debug)
 find_library(LIBLBX_LOCATION LibLBX)
 set(LIBLBX_INCLUDE_DIR C:/Development/STU-LBX_Library/LibLBX)
 include_directories(${LIBLBX_INCLUDE_DIR})
 
-#C:\Users\jbalcomb\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.5981.166\bin\cmake\win\share\cmake-3.17\Modules\FindSDL2.cmake
-#CLion -> File -> Settings -> CMake -> Profiles -> Environment -> SDL2DIR=E:\devel_lib\SDL2-devel-2.0.14-mingw\SDL2-2.0.14\x86_64-w64-mingw32\
-message("ENV{SDL2DIR}: $ENV{SDL2DIR}")
-#set(SDL2_PATH "C:/devel_lib/SDL2-devel-2.0.14-mingw/SDL2-2.0.14/x86_64-w64-mingw32")
-#set(SDL2_PATH "C:/devel_lib/SDL2-devel-2.0.14-mingw/SDL2-2.0.14/i686-w64-mingw32")
-#set(SDL2_PATH "E:/devel_lib/SDL2-devel-2.0.14-mingw/SDL2-2.0.14/x86_64-w64-mingw32")
-set(SDL2_PATH "E:/devel_lib/SDL2-devel-2.0.14-mingw/SDL2-2.0.14/i686-w64-mingw32")
-find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIR})
-message("SDL2_LIBRARY: ${SDL2_LIBRARY}")
-message("SDL2_INCLUDE_DIR: ${SDL2_INCLUDE_DIR}")
+#find_package(Doxygen)
+if(DOXYGEN_FOUND)
+    set(DOXYGEN_INPUT ${LBXMGR_SOURCES})
+    set(DOXYGEN_OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+    add_custom_command(
+            OUTPUT ${DOXYGEN_OUTPUT}
+            COMMAND ${CMAKE_COMMAND} -E echo_append "Building API Documentation..."
+            COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_INPUT}
+            COMMAND ${CMAKE_COMMAND} -E echo "Done."
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            DEPENDS ${DOXYGEN_INPUT}
+    )
+    add_custom_target(apidoc ALL DEPENDS ${DOXYGEN_OUTPUT})
+    add_custom_target(apidoc_forced
+            COMMAND ${CMAKE_COMMAND} -E echo_append "Building API Documentation..."
+            COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_INPUT}
+            COMMAND ${CMAKE_COMMAND} -E echo "Done."
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            )
+endif(DOXYGEN_FOUND)
 
-#set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} E:/devel_lib/SDL2-devel-2.0.14-mingw/SDL2-2.0.14/x86_64-w64-mingw32/lib)
-#find_library(SDL2_LOCATION SDL2)
-#find_library(SDL2main_LOCATION SDL2main)
-#set(SDL2_INCLUDE_DIR E:/devel_lib/SDL2-devel-2.0.14-mingw/SDL2-2.0.14/x86_64-w64-mingw32/include/SDL2)
-#include_directories(${SDL2_INCLUDE_DIR})
+# Tell cmake where Qt is located
+#set(Qt5_DIR  "E:/Qt/Qt5.12.10/5.12.10/mingw73_32/lib/cmake/Qt5")
+set(Qt5_DIR  "E:/Qt/Qt5.12.10/5.12.10/mingw73_64/lib/cmake/Qt5")
+# Tell cmake to find the modules Qt5Core and Qt5widgets
+find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
 
-#set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} E:/devel_lib/SDL2_image-devel-2.0.5-mingw/SDL2_image-2.0.5/x86_64-w64-mingw32/lib)
-#find_library(SDL2_IMAGE_LOCATION SDL2_image)
-#set(SDL2_IMAGE_INCLUDE_DIR E:/devel_lib/SDL2_image-devel-2.0.5-mingw/SDL2_image-2.0.5/x86_64-w64-mingw32/include/SDL2)
-#include_directories(${SDL2_IMAGE_INCLUDE_DIR})
 
-##set(SDL2_Flags "-mwindows -Wl,--no-undefined -static-libgcc")
-##set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SDL2_Flags}")
-###set(SDL2_Libs mingw32 SDL2 SDL2main m dinput8 dxguid dxerr8 user32 gdi32 winmm imm32 ole32 oleaut32 shell32 version uuid)
-##set(SDL2_Libs mingw32 SDL2 m dinput8 dxguid dxerr8 user32 gdi32 winmm imm32 ole32 oleaut32 shell32 version uuid)
-###target_link_libraries(hello_sdl2 ${SDL2_Libs})
-
-#set(CMAKE_EXE_LINKER_FLAGS " -static")
-#add_executable(LbxMgr ${LBXMGR_SOURCES})
-#target_link_libraries(LbxMgr -static-libgcc -static-libstdc++ ${LIBLBX_LOCATION} ${SDL2main_LOCATION} ${SDL2_LOCATION})
-##add_executable(STU_PaletteViewer ${LBXMGR_SOURCES})
-##target_link_libraries(STU_PaletteViewer -static-libgcc -static-libstdc++ ${LIBLBX_LOCATION} ${SDL2main_LOCATION} ${SDL2_LOCATION})
-
+set(CMAKE_EXE_LINKER_FLAGS " -static")
 add_executable(LbxMgr ${LBXMGR_SOURCES})
-target_link_libraries(LbxMgr ${LIBLBX_LOCATION} ${SDL2_LIBRARY})
+target_link_libraries(LbxMgr -static-libgcc -static-libstdc++ ${LIBLBX_LOCATION})
+target_link_libraries(LbxMgr Qt5::Core Qt5::Widgets)

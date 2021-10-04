@@ -1,0 +1,5 @@
+#include "ats.h"
+
+int ATS_DEBUG_MODE = 0;
+int ATS_DEBUG_VERBOSE_MODE = 0;
+int ATS_DEBUG_STRUGGLE_MODE = 0;
