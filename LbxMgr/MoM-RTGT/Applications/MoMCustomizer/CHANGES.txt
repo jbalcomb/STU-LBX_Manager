@@ -1,0 +1,51 @@
+MoMCustomizer
+Author: Klaas van Aarsen
+
+
+CHANGES IN 0.3.1 (2020--)
+-----------------------------
+* Upgrade to C++14 and Qt 5.14
+
+* Make it work on 64-bit linux platforms.
+  
+* Improve detection of the actual location of the MoM directory.
+  In particular if the mounted directory is not the MoM directory.
+
+
+
+CHANGES IN 0.2.2 (2012-03-29)
+----------------------------
+
+* Improved mechanism to find MoM in dosbox by a repeated search.
+
+
+
+CHANGES IN 0.2.1 (2012-03-19)
+----------------------------
+
+* Turned project into open source project on http://momrtgt.sourceforge.net/
+
+
+
+CHANGES IN 0.1g (2010-12-19)
+----------------------------
+
+* Added "Races" tab sheet, showing new races hopefully provided by Lucern. It is not functional yet.
+
+
+
+CHANGES IN 0.1f (2010-12-11)
+----------------------------
+
+* Version numbering is now the same as the MoMTweaker.
+
+* Added troubleshooting features 
+  o Title caption displays to which Magic.exe the Customizer connects to and writes to.
+  o File cout_cerr.log is written with troubleshooting information.
+  o Added markers (*) to signify which actions result in a change of Magic.exe
+
+* Added full Wizard-type editor on the tab sheet Picks.
+
+* Added "Randomize hero picks" button on the tab sheet Heroes:
+  all hero abilities are changed into random picks.
+  

@@ -1,0 +1,8 @@
+testCase_ShootArrows_Rocks
+Unit Generic ship or catapult Catapult
+shoot unit High Men Spearmen
+at distance 10
+
+Unit of 1 Generic ship or catapult Catapult throws a rock at High Men Spearmen at 10 squares with -1 to hit for 1.5 damage
+Unit of High Men Spearmen has 6.5 units left with a total of 6.5 hp
+

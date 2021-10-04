@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormSelectWizard</class>
+ <widget class="QWidget" name="FormSelectWizard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>34</y>
+     <width>310</width>
+     <height>366</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: url(:/dialogs/Wizards_border.gif);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="pushButton_Custom">
+    <property name="geometry">
+     <rect>
+      <x>161</x>
+      <y>329</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_0">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>21</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_1">
+    <property name="geometry">
+     <rect>
+      <x>161</x>
+      <y>21</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_2">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>65</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_3">
+    <property name="geometry">
+     <rect>
+      <x>161</x>
+      <y>65</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_4">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>109</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_5">
+    <property name="geometry">
+     <rect>
+      <x>161</x>
+      <y>109</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_6">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>153</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_7">
+    <property name="geometry">
+     <rect>
+      <x>161</x>
+      <y>153</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_8">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>197</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_9">
+    <property name="geometry">
+     <rect>
+      <x>161</x>
+      <y>197</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_10">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>241</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_11">
+    <property name="geometry">
+     <rect>
+      <x>161</x>
+      <y>241</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_12">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>285</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Wizard_13">
+    <property name="geometry">
+     <rect>
+      <x>161</x>
+      <y>285</y>
+      <width>136</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Wizards_button15.gif);
+color: rgb(221, 221, 110);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,7 @@
+testCase_ShootArrows_Invis1
+Unit Generic ship or catapult Catapult
+shoot unit Dark Elf Nightblades
+at distance 2
+
+Unit of Generic ship or catapult Catapult can not shoot an invisible unit at a distance. Attack aborted.
+

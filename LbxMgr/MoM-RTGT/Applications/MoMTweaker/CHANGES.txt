@@ -1,0 +1,560 @@
+MoMTweaker
+Author: Klaas van Aarsen
+
+
+CHANGES IN 0.3.4 (2020-03-16)
+-----------------------------
+* Fixed cursor images from FONTS.LBX (column major).
+
+* Fixed dependencies of Linux version (and upgraded it to Qt 5.14)
+
+
+
+CHANGES IN 0.3.3 (2020-03-14)
+-----------------------------
+* Revised solution to find Steam version of MoM and CoM, so that it still
+  works in e.g. Windows Vista.
+  That is, the dependency to GetModuleFileNameA in psapi.dll that was
+  introduced in 0.3.2 has been eliminated again.
+
+* Show all fields such that they are consistent with Caster of Magic
+  as per Seravy's comments.
+
+* Visualize palettes and cursor images from FONTS.LBX in LBX editor
+  based on information from Drake178.
+  Replacing them does not work (yet).
+
+* Released a Linux version as well.
+
+
+
+CHANGES IN 0.3.2 (2020-03-12)
+-----------------------------
+* Fixed problem that Tweaker did not properly connect to the Steam version
+  of MoM and CoM.
+
+* New graphical view of the Building Tree, which is generated from the
+  dependencies. It will also show unit requirements and prohibited races,
+  but only if the corresponding information is available, e.g. when
+  connected to the game.
+  Available in the Tools window.
+
+* Refer to actual names instead of old hard coded names in more places.
+  So that if a spell has been renamed by a modder, that it actually shows up
+  with the new name.
+  Currently does not work yet if the spell name is a label in a sub tree view.
+  So e.g. the Known Spells of a player are still shown with the wrong label
+  in the main window.
+
+* Cosmetic: eliminate the question marks in the caption bars.
+
+* For the record, not all features of Tweaker will work correctly with
+  Caster of Magic - yet. They may even crash. Work In Progress...
+
+
+
+CHANGES IN 0.3.1 (2020-03-08)
+-----------------------------
+* Project requires at least C++11 to build.
+
+* Recognize Seravy's v1.5+ and v5.0+ and show proper game data fields.
+
+* Load and save Caster of Magic 6.0 save game files.
+  The title bar will show "(MoM)" by default, "(CoM)" for Caster of Magic,
+  "(CoM-)" if the file is smaller than expected, and "(CoM+)" if the
+  file is larger than expected.
+  Credit to Ariphaos for providing the CoM save game layout.
+
+* Show actual spell names in the tree view instead of old hard coded names.
+
+* Added more diplomacy information based on Seravy's comments (couple of years ago).
+
+
+
+CHANGES IN 0.2.9 (2015-10-23)
+-----------------------------
+* Background images and icons are properly included again.
+
+* Address Calculator allows you to change values now.
+  Currently only 1 byte at a time, which happens when you press Enter.
+  Be careful if you change the .EXE file!
+  
+* Renamed Building Queue dialog to Manage Cities and improved it.
+
+* Level Bonus table can now also be edited if you load wizards.exe.
+
+* All picture sequences can be replaced now, also the bigger ones.
+  The palette may be a bit skewed though.
+  Still need to figure out how to re-apply the correct palette.
+  
+* Added some diplomacy information based on Seravy's comments.
+  
+* Repop lairs will only repop if unoccupied (untested).
+
+* The table of prefab artifacts now shows the header 'Artifact'
+  instead of 'Special'.
+  
+* The caption includes the version of the Tweaker now.
+
+
+
+CHANGES IN 0.2.8 (2013-12-30)
+-----------------------------
+* New Conjure Artifact Dialog (under Tools) that allows you to conjure
+  any of the prefab items.
+
+* Improved Building Queue Dialog and its optional automatic application.
+  - No pop-up at next-turn is shown for a city that was managed.
+  - The dialog shows more columns and information.
+  - You can manage a city completely from the dialog (change farmers/
+    workers, change production, buy production).
+  - The (fixed) building queue has been improved.
+
+* Added level bonus table with modified code in wizards.exe.
+  - Allows to set the bonus for any level for any field.
+  - Additionally allows a bonus for the number of shots.
+
+* Export animations to animated .gif files in LBX editor.
+
+* Display and export fonts in LBX editor.
+
+* Improve detection of the actual location of the MoM directory.
+  In particular if the mounted directory is not the MoM directory.
+
+* Updated the prefav ItemData table with spell book requirement and 
+  special status.
+
+
+
+CHANGES IN 0.2.7 (2013-08-07)
+-----------------------------
+
+* Save/restore bookmark during battle (on battle map) [FrancoK].
+  This works during the same battle. 
+  To restore a battle bookmark after leaving the game, first restore 
+  a save game from before the battle, enter battle again, and then 
+  you can restore the bookmark. 
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/25/
+
+* More tables (click Show tables):
+  - Item powers from itempow.lbx (new).
+  - Prefab item data from itemdata.lbx (new).
+  - Many other tables whose data was already editable in the tree view.
+
+* Lbx editor (click Tools, then click Lbx editor):
+  - loads any lbx file and shows its contents
+  - use the proper palette for all pictures
+  - as yet it can only replace pictures and sequences of pictures.
+
+* Drag & drop on the overland map and the battle map:
+  - Either moves a stack of units.
+  - Or simulates combat and shows the result in a message box.
+    However, it's mostly raw melee now with static specials and enchantments.
+    Shooting is not taken into account yet, nor all possible spells
+    and special effects.
+  
+* Combat simulator added.
+
+* Save and restore all dialog positions, sizes, check boxes, column widths, 
+  directories, and combo boxes.
+  
+* Track created item location in the "MEM:Game Data" section.
+
+
+
+CHANGES IN 0.2.6 (2012-09-08)
+-----------------------------
+
+* Fixed the failure to connect in Windows 7 that apparently 
+  afflicted some people.
+  All accessible memory is searched now (with a new algorithm).
+  
+* Added a battlefield map (click Map and select Battle).
+  This completes the maps [Ayu].
+  Ticket: http://sourceforge.net/p/momrtgt/tickets/12/
+  Note that usually either the overland map or the battle map
+  will be corrupted depending on whether battle is in progress or not.
+
+* Added an experimental External AI dialog (click Tools, click External AI).
+  You can set a hook in the code for use in battle.
+  A hook will make the game stop each time an AI unit is on move.
+  Then you can change its tactic manually and release the hook.
+  
+* Revised the address calculator to display more information.
+
+* Added city name of fortress at the bottom of the wizard's data [FrancoK].
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/19/
+ 
+* Combat round added [Asfex].
+  Hero stats of all wizards added.
+  Node attributes added to the tree model and also in the overland map.
+  I do not know yet how it shows that it is warped though.
+  Added check box "Use icons".
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/20/
+
+* Fixed the 1.40m+ settings [FrancoK].
+  There is one catch: if you load a save file, the tweaker does not know 
+  the version of MoM, so it cannot show the 1.40m+ version of the fields.
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/18/
+
+* Fixed LBX editor bugs [FrancoK].
+  I've also added a "Save pics" button.
+  Note that some LBX files contain both pictures and non-pictures.
+  The non-pictures are shown as empty pictures now.
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/21/
+
+* Removed close button from map dialog and closed ticket [FrancoK].
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/22/
+
+  
+
+CHANGES IN 0.2.5 (2012-08-22)
+-----------------------------
+
+* Added an LBX editor (click Tools / LBX editor) [Anthony,Aureustgo,FrancoK].
+  When you load an LBX file with pictures, those will be shown in the 
+  top view.
+  The bottom view shows the bitmaps (png gif bmp jpg)
+  that are in the directory of the tweaker, or one directory lower.
+  I have included a couple of images that you can use.
+  If you click "Replace" the LBX file is overwritten.
+  To see the effect, MoM needs to be restarted (quit & continue).
+
+* Completed the overland map view to show everything it should.
+  Clicking on a tile will show what's there.
+  It also allows you to change the fields of the tile's contents.
+
+* Adjusted the Catnip mod to display what is changed, which is:
+  1. All units get an extra half move.
+  2. Heroes get dedicated slots (and a couple of changes).
+  3. Magicians, priests, and shamen are renamed and get different abilities.
+  TBH, this is not what Catwalk intended, but these are ideas I found
+  fun to implement. ;)
+  Btw, quitting MoM and continuing discards all changes.
+
+* Added tax unrest table to Game data [Anthony].
+
+  
+
+CHANGES IN 0.2.4 (2012-08-02)
+-----------------------------
+
+* Added Anthony's spell-category information to the table of spells [Anthony].
+
+* Made all fields in all tables editable (button "Show tables").
+  Also added a context popup menu.
+  The context menu contains at least "Ctrl+C" that allows you to copy
+  and paste data to for instance Excel.
+  Where applicable the selection(s) can be made from the popup menu
+  (for instance the immunities of a unit).
+  
+* In particular the Unrest table is now editable. [letsdance]
+  To make the changes permanent, load "TERRSTAT.LBX", make the changes,
+  and save it.
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/17/
+  
+* Extended "Summon" dialog to display more fields under more circumstances.
+  
+* Fixed Customizer (Magic.exe) sections (which were damaged).
+  
+* Fixed <Unknown eMagic Powerful> (4) in Insecticide 1.40m+ [FrancoK]
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/18/
+
+* Added max books/skills to EXE:Miscellaneous, so you can
+  get more than 13 books and 6 skills [FrancoK].
+
+
+
+CHANGES IN 0.2.3 (2012-06-21)
+-----------------------------
+
+* Attached help texts (from HELP.LBX) as tooltips to lots of items.
+
+* Fixed and improved unit view (Summon dialog).
+  In particular added: required buildings, type of ranged attack,
+  help texts.
+
+* Fixed "apply buildings" to build only allowed buildings and units
+  (still need to fix that Sawmill and Miner's guild require forest resp.
+  hills/mountains).
+  
+* Added nr of common spells you get for 2 books and up to MEM:Customizer 
+  [letsdance].
+  
+* Added research bonuses to EXE:Miscellaneous [letsdance].
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/16/
+
+
+
+CHANGES IN 0.2.2 (2012-04-04)
+-----------------------------
+
+* Speeded up the tree view by implementing lazy icons, meaning the tree view 
+  only retrieves icons in a background process when there is spare time.
+  
+* Extended Overland map with terrain, bonus deposits, units, and a context 
+  menu to pop up a unit view.
+
+* Extended unit view (dialog Summon) with more extensive information.
+
+* Added food bonuses in section EXE:Miscellaneous [Pax Empyrean].
+
+* Updated address calculator to show addresses in DOS, the EXE files, the 
+  SAVE files, and IDA.
+  It triggers whenever you click a MoM field in the tree view.
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/5/
+
+* Made fortress data editable. It's the last subtree in each Wizard in the 
+  tree view [Question].
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/4/
+
+* Fixed number of battle units to go up and/or down when for instance a demon 
+  is summoned [Jtm].
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/3/
+  
+* Improved mechanism to find MoM in dosbox by a repeated search [Jtm].
+  Ticket: https://sourceforge.net/p/momrtgt/tickets/2/
+
+
+
+CHANGES IN 0.2.1 (2012-03-19)
+-----------------------------
+
+* Turned project into open source project on http://momrtgt.sourceforge.net/
+
+* Added Summon unit dialog with a nice view of the unit to summon.
+  In particular this handles all the details when summoning a hero.
+
+* Moved all buttons that are not very interesting right now into a subdialog 
+  named Tools.
+
+
+
+CHANGES IN 0.1g (2010-12-19)
+----------------------------
+
+* Processed Kyrub's 1.40j present (all Spell Saves and City Wall modifiers 
+  are editable now).
+
+* Implemented a first version of the Select Initial Spells Dialog with 
+  Catwalks proposal with guaranteed and starting spells.
+
+* Added Hero-Initializers (Magic.exe) to the Customizer section.
+  You can e.g. specify the random fighter/mage/any picks here.
+
+* Added Building Data
+
+* Added Events
+
+* Added pictures loaded from UNITS1.LBX, UNITS2.LBX, MONSTER.LBX, 
+  CITYSCAP.LBX (buildings), ITEMS.LBX
+
+* You can load/save BUILDDAT.LBX, SPELLDAT.LBX, TERRSTAT.LBX (unrest) now.
+
+
+
+CHANGES IN 0.1e (2010-12-04)
+----------------------------
+
+* You can Load/Edit/Save Wizards.exe and Magic.exe now.
+
+  Note that changes in a connected game (button "Connect") are only partly 
+  saved in the .exe files.
+  That is, only sections marked MODIFIES Wizards.exe resp. MODIFIES Magic.exe 
+  are saved.
+  The other changes only have effect in memory.
+  .Exe files loaded with the button "Load" are saved completely when 
+  clicking "Save".
+  
+* The Customizer section has been extended with new fields.
+
+* The "Show tables" button also shows the Unrest table now.
+  
+* The "Catnip (exp)" button has been extended to rewrite the code in 
+  Wizards.exe so heroes can get other slot types.
+  By default everything works as before, but the hero-type field in the 
+  unit-type data can take on more values now.
+  By default this is a number between 0 and 3 signifying Fighter, Bow, 
+  Fighter/Wizard, or Wizard.
+  Heroes of these types will get Sword-Shield-Ring, Bow-Shield-Ring, 
+  Sword/Staff-Shield-Ring, resp. Staff-Ring-Ring.
+  The new values are of the form: 6 + slot1 + 6 x (slot2 + 6 x slot3).
+  Each slot has one of the values given by 0=Sword, 1=Bow, 2=Sword/Staff, 
+  3=Staff, 4=Shield, 5=Ring.
+  To give a hero e.g. Sword-Sword-Shield, his number must be: 
+  6 + 0 + 6 x (0 + 6 x 5) = 186
+
+* The "Catnip (exp)" button has been extended to incorporate the new 
+  magician-types and cleric-types.
+  The code in Wizards.exe is rewritten to store the new names.
+  The magician-types and cleric-types have been adjusted with new abilities.
+  Note that the magicians that have Caster 20 MP or 40 MP ability, have a 
+  race of a color (e.g. Sorcery).
+  This is necessary because otherwise they crash the game. 
+  
+* A couple of bugs have been eliminated.
+
+
+
+CHANGES IN 0.1d (2010-11-28)
+----------------------------
+
+* Integrated the new Setup Customizer Tool.
+  Now you can connect to MoM when you're doing the setup (Magic.exe).
+  
+* "Show Tables" now shows all available Unit Type data and available 
+  Spell Data. 
+  With Ctrl+C it they can be copied to Excel.
+
+* Added various fields, among which the Random Generator in the Game Data.
+
+* Redirected the standard outputs to cout_cerr.log in the Windows version 
+  for diagnostic purposes.
+
+
+
+CHANGES IN 0.1c (2010-11-23)
+----------------------------
+
+* Load and save of Wizards.exe simultaneous with Load/Save of SAVEn.GAM.
+  Note that you can either connect to a game, or load/save SAVEn.GAM and 
+  Wizards.exe.
+  Effectively the Tweaker is now also a mod editor from which the changes 
+  can be saved.
+  
+* More exposure of MoM data
+   o Difficulty Table fully analyzed
+   o Battle units further analyzed
+   o New Battlefield
+   o New Spells cast in Battle
+   o Current unit view showing all current bonuses of a unit
+   o Spell Saves (only when Wizards.exe is loaded)
+   o Miscellaneous like Large Shield (only when Wizards.exe is loaded)
+   o Note that a change in Spell Saves or Miscellaneous immediately affects
+     a game being played with the same Wizards.exe.
+     
+* New "Show Tables" button that shows all Spell Data in a table view which
+  can be copy-pasted in Excel. It is currently not editable.
+  
+
+
+CHANGES IN 0.1b (2010-11-09)
+----------------------------
+* Fixed a couple of bugs and updated the buttons to work consistently
+* Extended the exposure of MoM data:
+   o Difficulty Table (40 entries)
+   o Races
+   o Units: Unit Types, Hero Stats, Heroes Hired
+   o Spells
+   o Various names can now be changed as well
+* New dialog for Apply Build Queues (proof-of-concept, although Apply works).
+
+
+
+CHANGES IN 0.1a (2010-11-06)
+----------------------------
+First Linux version
+
+
+
+CHANGES IN 0.1 (2010-11-05)
+---------------------------
+For those people who do not know about or believe in suppression yet.
+In the Tweaker you can inspect all stats that are kept by MoM during a battle.
+This includes the suppression stat!
+
+As Kyrub explained, when you attack a unit, its suppression counter is 
+incremented.
+An increased suppression counter reduces the To Hit of the unit.
+At the beginning of each battle round the suppression counters are reset.
+
+Btw, the downloadable version has been renewed with more known fields in the 
+Battle Units.
+
+Furthermore this version has been used for its first field test: to create the
+save games for tournament RB 1 (see tournament thread)!
+The Tweaker is now, as far as I know, the only program (other than a hex 
+editor) that gives you access to the home race of a wizard!
+
+P.S.: Please note that the program is still in its proof-of-concept, 
+sneak-preview phase, that is, not all buttons work quite as you would expect.
+
+
+
+CHANGES IN 0.1 (2010-10-28)
+---------------------------
+To proof the concept of interactive modding, I've implemented Catnip's Basic 
+Unit Changes. To activate them start MoM, start the Tweaker, click Connect, 
+wait a couple of seconds (untill the Tree View is updated), and click 
+"Catnip mod".
+That's it, now you're MoM game is a Catnip mod.
+
+Actually there are a few features of Catnip's Basic Unit Changes I did not 
+implement yet:
+
+   1. Large Shield still only gives +2 against ranged attack, because I do 
+      not know yet where I should change this.
+   2. The Clerics do not carry the name "Cleric" although they do function as 
+      Clerics. Again because I don't know where to change this yet.
+   3. E.g. Elven Lords are unchanged, since their name is not "Cavalry", but 
+      e.g. Minotaurs are counted as foot units. But I leave this to you, 
+	  because the Tweaker gives you the interface to change it!
+   4. I was wondering if Catwalk meant Dwarven Swordsmen to be treated just 
+      as any other Swordsmen, because now they are.
+
+
+
+CHANGES (2010-08-01)
+--------------------
+First Windows GUI version name MoMInteractGameTweaker.
+
+It features:
+* Live connection to a MoM game in progress (DOSBox)
+* Load / Save of SAVEn.GAM files
+* Hero viewer with all related fields (Hired Hero, Items, Hero/Unit Config 
+  Data, Hero Stats, Unit Status Data)
+* Some nice graphics in tune with MoM
+* Repop lairs
+* Apply Build Queues
+
+The Hero viewer is only a viewer because I wasn't yet able to make Qt let me 
+edit the fields in the QTreeWidget. For some reason the fields are always 
+read-only! (Does anyone know why this is?)
+
+The Apply Build Queues I borrowed from the thread 'Mod Project Idea: 
+Grand Vizier' from lemon and kyrub. There are some good ideas there:)!
+Basically it's a proof-of-concept that you can manage your build queues from 
+an external monitor program.
+For now I've hardcoded the Build Queues.
+
+
+
+CHANGES (2010-07-30)
+--------------------
+First Console version named IGTconsole.
+
+IGTconsole is an Interactive Game Tweaker for Master of Magic 1.31.
+When it is run it tries to connect to a MoM game in progress.
+With the options you can specify to make changes in the MoM game.
+
+Usage is:
+  C> IGTconsole [ /option[=value] ... ]
+
+NOTE: the options are case sensitive and spaces specified are mandatory.
+The possible option combinations are:
+/read=SAVEn.GAM [/write=SAVEm.GAM]
+        Read from SAVEn.GAM instead of from memory
+        Afterward write to SAVEm.GAM (optionally)
+/repopLairs[=maxOut]
+        Repopulate all lairs
+         If 'maxOut' is specified, all lairs are
+        cranked up.
+/addHero=<heroNr> [/allPlayers]
+        Adds the hero <heroNr> to your fortress.
+        heroNr 0 is Brax, the Dwarf and 34 is Torin,
+        the Chosen.
+        If /allPlayers is specified, all players get
+        the hero.
+/validate
+        Validates to see if the game is broken.
+

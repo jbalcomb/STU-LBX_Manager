@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<momrtgt 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="momrtgt.xsd">
+	
+	<title>Level bonuses regular unit</title>
+	<location></location>
+	
+	<!-- 
+		0=melee
+		1=ranged
+		4=to hit
+		5=defense
+		6=resistance
+		
+		3=ranged shots (could be nice, increasing the shots with level)
+		7=movement in half moves (also interesting)
+		0Dh=current number of figures (more figures at higher levels, yay!)
+		10h=hit points
+		11h=scouting range
+		13h=total number of figures
+		15h=gaze/touch/poison/holy-bonus/res-to-all modifier
+		24h=Extra To Hit Melee
+		25h=Extra To Hit Ranged
+		26h=Extra To Defend (better blocking at higher levels?)
+		27h=weapon type (mithril and such, mmmh)
+	-->
+	
+	<node>
+		<title>Level2-Bonus1</title>
+		<location>ovr116:1EBA</location>
+		<comment>Default 6=resistance</comment>
+	</node>
+	<node>
+		<title>Level2-Bonus2 (ranged)</title>
+		<location>ovr116:1ECB</location>
+		<comment>Only with ranged attack. Default 1=ranged</comment>
+	</node>
+	<node>
+		<title>Level2-Bonus3 (melee)</title>
+		<location></location>
+		<comment>Only with melee attack. Default 0=melee</comment>
+	</node>
+	
+	<node id="Level3-Bonus1">
+		<title>Level3-Bonus1</title>
+		<location>ovr116:1EE6</location>
+		<comment>Default 6=resistance</comment>
+	</node>
+	<node>
+		<title>Level3-Bonus2</title>
+		<location>ovr116:1EED</location>
+		<comment>Default 5=defense</comment>
+	</node>
+
+	<node>
+		<title>Level4-Bonus1</title>
+		<location>ovr116:1EF9</location>
+		<comment>Default 4=to hit</comment>
+	</node>
+	<node>
+		<title>Level4-Bonus2</title>
+		<location>ovr116:1F00</location>
+		<comment>Default 6=resistance</comment>
+	</node>
+	<node>
+		<title>Level4-Bonus3 (ranged)</title>
+		<location>ovr116:1F11</location>
+		<comment>Only with ranged attack. Default 1=ranged</comment>
+	</node>
+	<node>
+		<title>Level4-Bonus4 (melee)</title>
+		<location></location>
+		<comment>Only with melee attack. Default 0=melee</comment>
+	</node>
+	
+	<node>
+		<title>Level5-Bonus1</title>
+		<location>ovr116:1F21</location>
+		<comment>Default 4=to hit</comment>
+	</node>
+	<node>
+		<title>Level5-Bonus2</title>
+		<location>ovr116:1F33</location>
+		<comment>Default 6=resistance</comment>
+	</node>
+	<node>
+		<title>Level5-Bonus3</title>
+		<location>ovr116:1F3A</location>
+		<comment>Default 5=defense</comment>
+	</node>
+	
+	<node>
+		<title>Level6-Bonus1</title>
+		<location>ovr116:1F46</location>
+		<comment>Default 4=to hit</comment>
+	</node>
+	<node>
+		<title>Level6-Bonus2</title>
+		<location>ovr116:1F4D</location>
+		<comment>Default 6=resistance</comment>
+	</node>
+	<node>
+		<title>Level6-Bonus3 (ranged)</title>
+		<location>ovr116:1F5E</location>
+		<comment>Only with ranged attack. Default 1=ranged</comment>
+	</node>
+	<node>
+		<title>Level6-Bonus4 (melee)</title>
+		<location></location>
+		<comment>Only with melee attack. Default 0=melee</comment>
+	</node>
+	
+</momrtgt>
+	

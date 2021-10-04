@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormGameOptions</class>
+ <widget class="QWidget" name="FormGameOptions">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>0</y>
+     <width>308</width>
+     <height>400</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: url(:/dialogs/New_game_border.gif);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="pushButton_Cancel">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>358</y>
+      <width>128</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Cancel_button-anim.gif);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_OK">
+    <property name="geometry">
+     <rect>
+      <x>174</x>
+      <y>358</y>
+      <width>128</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/OK_button-anim.gif);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Opponents">
+    <property name="geometry">
+     <rect>
+      <x>172</x>
+      <y>132</y>
+      <width>130</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Opponents_button.gif);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_LandSize">
+    <property name="geometry">
+     <rect>
+      <x>172</x>
+      <y>186</y>
+      <width>130</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Land_Size_button.gif);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Magic">
+    <property name="geometry">
+     <rect>
+      <x>172</x>
+      <y>240</y>
+      <width>130</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Magic_button.gif);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_Difficulty">
+    <property name="geometry">
+     <rect>
+      <x>173</x>
+      <y>78</y>
+      <width>130</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: url(:/dialogs/Difficulty_button.gif);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Intro</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Easy</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Hard</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Extreme</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Impossible</string>
+     </property>
+    </item>
+   </widget>
+   <zorder>pushButton_Cancel</zorder>
+   <zorder>pushButton_OK</zorder>
+   <zorder>pushButton_LandSize</zorder>
+   <zorder>pushButton_Magic</zorder>
+   <zorder>pushButton_Opponents</zorder>
+   <zorder>comboBox_Difficulty</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

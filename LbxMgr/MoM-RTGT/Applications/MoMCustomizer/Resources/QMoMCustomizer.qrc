@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>dialogs/Main_screen_back.gif</file>
+        <file>dialogs/New_game_border.gif</file>
+        <file>dialogs/Difficulty_button.gif</file>
+        <file>dialogs/Opponents_button.gif</file>
+        <file>dialogs/Land_Size_button.gif</file>
+        <file>dialogs/Magic_button.gif</file>
+        <file>dialogs/Cancel_button-anim.gif</file>
+        <file>dialogs/OK_button-anim.gif</file>
+        <file>dialogs/Wizards_border.gif</file>
+        <file>dialogs/Wizards_button15.gif</file>
+        <file>dialogs/Name_box.gif</file>
+        <file>dialogs/Magic_pick_screen.gif</file>
+        <file>dialogs/MAGICPIK-ok_button.gif</file>
+        <file>dialogs/MAGICOK-non_selectable_ok.gif</file>
+        <file>dialogs/SPELLS2-Title_underline.gif</file>
+        <file>dialogs/SPELLS2-First_dark_region.gif</file>
+        <file>dialogs/SPELLS2-Second_dark_region.gif</file>
+        <file>dialogs/SPELLS2-Third_dark_region.gif</file>
+        <file>dialogs/PIKMAGIC-Ok_picks_back.gif</file>
+        <file>dialogs/RACES-Races_dark_region.gif</file>
+        <file>dialogs/FLAGSNEW.gif</file>
+    </qresource>
+</RCC>

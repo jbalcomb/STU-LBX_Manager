@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MemoryLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MemoryLayout.xsd">
+	<DataSegment>
+		<Wizards>
+			<Wizard>
+				<Portrait value="Freya"/>
+				<Name value="I like Serena"/>
+				<Banner value="1"/>
+				<Hired_Heroes>
+					<Hired_Hero>
+						<Name value="Serena"/>
+						<UnitNr value="0"/>
+					</Hired_Hero>
+				</Hired_Heroes>
+			</Wizard>
+			<Wizard>
+				<Portrait value="5"/>
+				<Name value="Tauron"/>
+				<Banner value="Red"/>
+				<Hired_Heroes/>
+			</Wizard>
+		</Wizards>
+	</DataSegment>
+	<Heap>
+		<Units>
+			<Unit>
+				<UnitType value="Healer"/>
+				<Melee value="5"/>
+			</Unit>
+		</Units>
+	</Heap>
+</MemoryLayout>

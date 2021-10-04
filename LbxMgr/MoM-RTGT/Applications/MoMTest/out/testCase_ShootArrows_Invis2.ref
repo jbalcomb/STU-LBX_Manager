@@ -1,0 +1,9 @@
+testCase_ShootArrows_Invis2
+Unit Generic ship or catapult Catapult
+shoot unit Dark Elf Nightblades
+at distance 1
+
+Invisibility reduces to hit ranged physical/magical of Generic ship or catapult Catapult to -1/-1
+Unit of 1 Generic ship or catapult Catapult throws a rock at Dark Elf Nightblades at 1 squares with -1 to hit for 1.3 damage
+Unit of Dark Elf Nightblades has 4.7 units left with a total of 4.7 hp
+

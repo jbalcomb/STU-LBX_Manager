@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Klaas van Aarsen (Klaas van Aarsen) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="MemoryLayout">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DataSegment">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="Wizards">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Wizard" type="WizardType" maxOccurs="5"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Heap">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="Units">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Unit" type="UnitType" minOccurs="0" maxOccurs="1000"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="WizardType">
+		<xs:sequence>
+			<xs:element name="Portrait" type="PortraitType"/>
+			<xs:element name="Name">
+				<xs:complexType>
+					<xs:attribute name="value">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="20"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Banner" type="BannerType"/>
+			<xs:element name="Hired_Heroes">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Hired_Hero" type="Hired_HeroType" minOccurs="0" maxOccurs="6"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BannerType">
+		<xs:attribute name="value">
+			<xs:simpleType>
+				<xs:union>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Blue"/>
+							<xs:enumeration value="Green"/>
+							<xs:enumeration value="Purple"/>
+							<xs:enumeration value="Red"/>
+							<xs:enumeration value="Yellow"/>
+						</xs:restriction>
+					</xs:simpleType>
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedShort">
+							<xs:maxInclusive value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:union>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PortraitType">
+		<xs:attribute name="value">
+			<xs:simpleType>
+				<xs:union>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Freya"/>
+							<xs:enumeration value="Tauron"/>
+						</xs:restriction>
+					</xs:simpleType>
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte"/>
+					</xs:simpleType>
+				</xs:union>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="UnitType">
+		<xs:sequence>
+			<xs:element name="UnitType">
+				<xs:complexType>
+					<xs:attribute name="value"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Melee">
+				<xs:complexType>
+					<xs:attribute name="value" type="xs:unsignedByte"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Hired_HeroType">
+		<xs:sequence>
+			<xs:element name="Name">
+				<xs:complexType>
+					<xs:attribute name="value" type="xs:string"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UnitNr">
+				<xs:complexType>
+					<xs:attribute name="value" type="xs:integer"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

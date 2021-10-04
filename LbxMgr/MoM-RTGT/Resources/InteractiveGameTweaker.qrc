@@ -1,0 +1,357 @@
+<RCC>
+    <qresource prefix="/">
+        <file>abilities/Agility X.gif</file>
+        <file>abilities/Agility.gif</file>
+        <file>abilities/Arcane Power X.gif</file>
+        <file>abilities/Arcane Power.gif</file>
+        <file>abilities/Armor Piercing.gif</file>
+        <file>abilities/Armsmaster X.gif</file>
+        <file>abilities/Armsmaster.gif</file>
+        <file>abilities/Arrows.gif</file>
+        <file>abilities/Blademaster X.gif</file>
+        <file>abilities/Blademaster.gif</file>
+        <file>abilities/Bullets.gif</file>
+        <file>abilities/Caster.gif</file>
+        <file>abilities/Caster 20 MP.gif</file>
+        <file>abilities/Caster 40 MP.gif</file>
+        <file>abilities/Cause Fear Spell.gif</file>
+        <file>abilities/Charmed.gif</file>
+        <file>abilities/Chaos Channels Demon Wings.gif</file>
+        <file>abilities/Chaos Channels Demon Skin.gif</file>
+        <file>abilities/Chaos Channels Fiery Breath.gif</file>
+        <file>abilities/Cold Immunity.gif</file>
+        <file>abilities/Constitution.gif</file>
+        <file>abilities/Constitution X.gif</file>
+        <file>abilities/Construction.gif</file>
+        <file>abilities/Create Outpost.gif</file>
+        <file>abilities/Create Undead.gif</file>
+        <file>abilities/Death Gaze.gif</file>
+        <file>abilities/Death Immunity.gif</file>
+        <file>abilities/Death Touch.gif</file>
+        <file>abilities/Destruction.gif</file>
+        <file>abilities/Dispel Evil.gif</file>
+        <file>abilities/Doom Gaze.gif</file>
+        <file>abilities/Doombolt Spell.gif</file>
+        <file>abilities/Fire Ball Spell.gif</file>
+        <file>abilities/Fire Breath.gif</file>
+        <file>abilities/Fire Immunity.gif</file>
+        <file>abilities/First Strike.gif</file>
+        <file>abilities/Flying.gif</file>
+        <file>abilities/Forester.gif</file>
+        <file>abilities/Healer.gif</file>
+        <file>abilities/Healing Spell.gif</file>
+        <file>abilities/Holy Bonus.gif</file>
+        <file>abilities/Illusions Immunity.gif</file>
+        <file>abilities/Illusionary attack.gif</file>
+        <file>abilities/Immolation.gif</file>
+        <file>abilities/Invisibility.gif</file>
+        <file>abilities/Land Corruption.gif</file>
+        <file>abilities/Large Shield.gif</file>
+        <file>abilities/Leadership X.gif</file>
+        <file>abilities/Leadership.gif</file>
+        <file>abilities/Legendary X.gif</file>
+        <file>abilities/Legendary.gif</file>
+        <file>abilities/Life Stealing.gif</file>
+        <file>abilities/Lightning.gif</file>
+        <file>abilities/Long Range.gif</file>
+        <file>abilities/Lucky.gif</file>
+        <file>abilities/Lucky_Hero.gif</file>
+        <file>abilities/Magic Immunity.gif</file>
+        <file>abilities/Magic Ranged.gif</file>
+        <file>abilities/Magic Weapon.gif</file>
+        <file>abilities/Meld With Node.gif</file>
+        <file>abilities/Merging.gif</file>
+        <file>abilities/Might X.gif</file>
+        <file>abilities/Might.gif</file>
+        <file>abilities/Missiles Immunity.gif</file>
+        <file>abilities/Mountaineer.gif</file>
+        <file>abilities/Negate First Strike.gif</file>
+        <file>abilities/Noble.gif</file>
+        <file>abilities/Non Corporeal.gif</file>
+        <file>abilities/Pathfinding.gif</file>
+        <file>abilities/Plane Shift.gif</file>
+        <file>abilities/Poison Immunity.gif</file>
+        <file>abilities/Poison attack.gif</file>
+        <file>abilities/Power Drain.gif</file>
+        <file>abilities/Prayermaster X.gif</file>
+        <file>abilities/Prayermaster.gif</file>
+        <file>abilities/Purify.gif</file>
+        <file>abilities/Random Any.gif</file>
+        <file>abilities/Random Ftr.gif</file>
+        <file>abilities/Random Mage.gif</file>
+        <file>abilities/Regeneration.gif</file>
+        <file>abilities/Resistance to All.gif</file>
+        <file>abilities/Rocks.gif</file>
+        <file>abilities/Sage X.gif</file>
+        <file>abilities/Sage.gif</file>
+        <file>abilities/Sailing.gif</file>
+        <file>abilities/Scouting.gif</file>
+        <file>abilities/Stoning Gaze.gif</file>
+        <file>abilities/Stoning Immunity.gif</file>
+        <file>abilities/Stoning Touch.gif</file>
+        <file>abilities/Summon Demons.gif</file>
+        <file>abilities/Summon Demons 1.gif</file>
+        <file>abilities/Summon Demons 2.gif</file>
+        <file>abilities/Swimming.gif</file>
+        <file>abilities/Teleporting.gif</file>
+        <file>abilities/Thrown.gif</file>
+        <file>abilities/Undead.gif</file>
+        <file>abilities/Wall Crusher.gif</file>
+        <file>abilities/Weapon Immunity.gif</file>
+        <file>abilities/Web Spell.gif</file>
+        <file>abilities/Web.gif</file>
+        <file>abilities/Wind Walking.gif</file>
+        <file>buildings/Builders Hall.gif</file>
+        <file>fonts/MoMFont4.ttf</file>
+        <file>fonts/MoMFont7.ttf</file>
+        <file>images/background_screen.gif</file>
+        <file>images/background_unit.gif</file>
+        <file>images/bow_gold.gif</file>
+        <file>images/bow_gold_lost.gif</file>
+        <file>images/bow_normal.gif</file>
+        <file>images/bow_normal_lost.gif</file>
+        <file>images/elite.gif</file>
+        <file>images/fireball_gold.gif</file>
+        <file>images/fireball_gold_lost.gif</file>
+        <file>images/fireball_normal.gif</file>
+        <file>images/fireball_normal_lost.gif</file>
+        <file>images/firebreath.gif</file>
+        <file>images/grandlord.gif</file>
+        <file>images/hand.cur</file>
+        <file>images/hand.gif</file>
+        <file>images/heart_gold.gif</file>
+        <file>images/heart_gold_lost.gif</file>
+        <file>images/heart_normal.gif</file>
+        <file>images/heart_normal_lost.gif</file>
+        <file>images/large_unit_background.gif</file>
+        <file>images/ranged_unknown.gif</file>
+        <file>images/recruit.gif</file>
+        <file>images/regular.gif</file>
+        <file>images/resistance_gold.gif</file>
+        <file>images/resistance_gold_lost.gif</file>
+        <file>images/resistance_normal.gif</file>
+        <file>images/resistance_normal_lost.gif</file>
+        <file>images/rock_gold.gif</file>
+        <file>images/rock_gold_lost.gif</file>
+        <file>images/rock_normal.gif</file>
+        <file>images/rock_normal_lost.gif</file>
+        <file>images/shield_gold.gif</file>
+        <file>images/shield_gold_lost.gif</file>
+        <file>images/shield_normal.gif</file>
+        <file>images/shield_normal_lost.gif</file>
+        <file>images/superhero.gif</file>
+        <file>images/sword_adamantium_gold.gif</file>
+        <file>images/sword_adamantium_gold_lost.gif</file>
+        <file>images/sword_adamantium_normal.gif</file>
+        <file>images/sword_adamantium_normal_lost.gif</file>
+        <file>images/sword_gold.gif</file>
+        <file>images/sword_gold_lost.gif</file>
+        <file>images/sword_magic_gold.gif</file>
+        <file>images/sword_magic_gold_lost.gif</file>
+        <file>images/sword_magic_normal.gif</file>
+        <file>images/sword_magic_normal_lost.gif</file>
+        <file>images/sword_mithril_gold.gif</file>
+        <file>images/sword_mithril_gold_lost.gif</file>
+        <file>images/sword_mithril_normal.gif</file>
+        <file>images/sword_mithril_normal_lost.gif</file>
+        <file>images/sword_normal.gif</file>
+        <file>images/sword_normal_lost.gif</file>
+        <file>images/thrown.gif</file>
+        <file>images/thrown_gold.gif</file>
+        <file>images/thrown_normal.gif</file>
+        <file>images/tohit.gif</file>
+        <file>images/tohit_lost.gif</file>
+        <file>images/ultraelite.gif</file>
+        <file>images/veteran.gif</file>
+        <file>images/Arcane.gif</file>
+        <file>images/Arrow.gif</file>
+        <file>images/Attack.gif</file>
+        <file>images/Bullet.gif</file>
+        <file>images/Chaos.gif</file>
+        <file>images/Death.gif</file>
+        <file>images/Hitpoints.gif</file>
+        <file>images/Hitpoints per Figure.gif</file>
+        <file>images/Level 1.gif</file>
+        <file>images/Level 2.gif</file>
+        <file>images/Level 3.gif</file>
+        <file>images/Level 4.gif</file>
+        <file>images/Level 5.gif</file>
+        <file>images/Level 6.gif</file>
+        <file>images/Level 7.gif</file>
+        <file>images/Level 8.gif</file>
+        <file>images/Level 9.gif</file>
+        <file>images/Life.gif</file>
+        <file>images/Melee.gif</file>
+        <file>images/Nature.gif</file>
+        <file>images/Ranged.gif</file>
+        <file>images/Defense.gif</file>
+        <file>images/Resistance.gif</file>
+        <file>images/Sorcery.gif</file>
+        <file>images/To Hit.gif</file>
+        <file>race/Barbarian.gif</file>
+        <file>race/Beastmen.gif</file>
+        <file>race/Dark Elf.gif</file>
+        <file>race/Draconian.gif</file>
+        <file>race/Dwarven.gif</file>
+        <file>race/Gnoll.gif</file>
+        <file>race/Halfling.gif</file>
+        <file>race/High Elf.gif</file>
+        <file>race/High Men.gif</file>
+        <file>race/Klackon.gif</file>
+        <file>race/Lizardman.gif</file>
+        <file>race/Nomad.gif</file>
+        <file>race/Orc.gif</file>
+        <file>race/Troll.gif</file>
+        <file>spells/Berserk.gif</file>
+        <file>spells/Black Channels.gif</file>
+        <file>spells/Black Prayer.gif</file>
+        <file>spells/Black Sleep.gif</file>
+        <file>spells/Bless.gif</file>
+        <file>spells/Blur.gif</file>
+        <file>spells/Chaos Channels.gif</file>
+        <file>spells/Chaos Surge.gif</file>
+        <file>spells/Charm of Life.gif</file>
+        <file>spells/Cloak of Fear.gif</file>
+        <file>spells/Confusion.gif</file>
+        <file>spells/Counter Magic.gif</file>
+        <file>spells/Creature Binding.gif</file>
+        <file>spells/Darkness.gif</file>
+        <file>spells/Dispel Evil.gif</file>
+        <file>spells/Eldritch Weapon.gif</file>
+        <file>spells/Elemental Armor.gif</file>
+        <file>spells/Endurance.gif</file>
+        <file>spells/Flame Blade.gif</file>
+        <file>spells/Flight.gif</file>
+        <file>spells/Giant Strength.gif</file>
+        <file>spells/Guardian Wind.gif</file>
+        <file>spells/Haste.gif</file>
+        <file>spells/Heroism.gif</file>
+        <file>spells/High Prayer.gif</file>
+        <file>spells/Holy Armor.gif</file>
+        <file>spells/Holy Weapon.gif</file>
+        <file>spells/Immolation.gif</file>
+        <file>spells/Invisibility.gif</file>
+        <file>spells/Invulnerability.gif</file>
+        <file>spells/Iron Skin.gif</file>
+        <file>spells/Lionheart.gif</file>
+        <file>spells/Magic Immunity.gif</file>
+        <file>spells/Metal Fires.gif</file>
+        <file>spells/Mind Storm.gif</file>
+        <file>spells/Mind Twist.gif</file>
+        <file>spells/Path Finding.gif</file>
+        <file>spells/Planar Travel.gif</file>
+        <file>spells/Possession.gif</file>
+        <file>spells/Prayer.gif</file>
+        <file>spells/Regeneration.gif</file>
+        <file>spells/Resist Elements.gif</file>
+        <file>spells/Resist Magic.gif</file>
+        <file>spells/Righteousness.gif</file>
+        <file>spells/Shatter.gif</file>
+        <file>spells/Spell Lock.gif</file>
+        <file>spells/Stone Skin.gif</file>
+        <file>spells/Terror.gif</file>
+        <file>spells/True Light.gif</file>
+        <file>spells/True Sight.gif</file>
+        <file>spells/Vertigo.gif</file>
+        <file>spells/Warp Creature.gif</file>
+        <file>spells/Warp Creature Attack.gif</file>
+        <file>spells/Warp Creature Defense.gif</file>
+        <file>spells/Warp Creature Resistance.gif</file>
+        <file>spells/Warp Reality.gif</file>
+        <file>spells/Warp Wood.gif</file>
+        <file>spells/Water Walking.gif</file>
+        <file>spells/Weakness.gif</file>
+        <file>spells/Web.gif</file>
+        <file>spells/Whirlwind.gif</file>
+        <file>spells/Wind Walking.gif</file>
+        <file>spells/Wrack.gif</file>
+        <file>spells/Wraith Form.gif</file>
+        <file>heroes/aerie.gif</file>
+        <file>heroes/allora.gif</file>
+        <file>heroes/aureus.gif</file>
+        <file>heroes/bahgtru.gif</file>
+        <file>heroes/brax.gif</file>
+        <file>heroes/bshan.gif</file>
+        <file>heroes/catwalk.jpg</file>
+        <file>heroes/elana.gif</file>
+        <file>heroes/fang.gif</file>
+        <file>heroes/greyfar.gif</file>
+        <file>heroes/gunthar.gif</file>
+        <file>heroes/jaer.gif</file>
+        <file>heroes/lucern.png</file>
+        <file>heroes/malleus.gif</file>
+        <file>heroes/marcus.gif</file>
+        <file>heroes/morgana.gif</file>
+        <file>heroes/mortu.gif</file>
+        <file>heroes/mystic_x.gif</file>
+        <file>heroes/rakir.gif</file>
+        <file>heroes/ravashak.gif</file>
+        <file>heroes/reywind.gif</file>
+        <file>heroes/roland.gif</file>
+        <file>heroes/serena.gif</file>
+        <file>heroes/shalla.gif</file>
+        <file>heroes/shin_bo.gif</file>
+        <file>heroes/shuri.gif</file>
+        <file>heroes/sir_hrld.gif</file>
+        <file>heroes/spyder.gif</file>
+        <file>heroes/stryke.gif</file>
+        <file>heroes/taki.gif</file>
+        <file>heroes/theria.gif</file>
+        <file>heroes/torin.gif</file>
+        <file>heroes/tumu.gif</file>
+        <file>heroes/valana.gif</file>
+        <file>heroes/warrax.gif</file>
+        <file>heroes/yramrag.gif</file>
+        <file>heroes/zaldron.gif</file>
+        <file>units/Amazon.gif</file>
+        <file>units/Assassin.gif</file>
+        <file>units/Barbarian.gif</file>
+        <file>units/Bard.gif</file>
+        <file>units/Beastmaster.gif</file>
+        <file>units/Black Knight.gif</file>
+        <file>units/Chaos Warrior.gif</file>
+        <file>units/Chosen.gif</file>
+        <file>units/Dervish.gif</file>
+        <file>units/Draconian.gif</file>
+        <file>units/Druid.gif</file>
+        <file>units/Dwarf.gif</file>
+        <file>units/Elven Archer.gif</file>
+        <file>units/Golden One.gif</file>
+        <file>units/Healer.gif</file>
+        <file>units/Huntress.gif</file>
+        <file>units/Illusionist.gif</file>
+        <file>units/Knight.gif</file>
+        <file>units/Magician.gif</file>
+        <file>units/Unknown.gif</file>
+        <file>units/Necromancer.gif</file>
+        <file>units/Ninja.gif</file>
+        <file>units/Orc Warrior.gif</file>
+        <file>units/Paladin.gif</file>
+        <file>units/Priestess.gif</file>
+        <file>units/Ranger.gif</file>
+        <file>units/Rogue.gif</file>
+        <file>units/Sage.gif</file>
+        <file>units/Serena.jpg</file>
+        <file>units/Swordsman.gif</file>
+        <file>units/Thief.gif</file>
+        <file>units/War Monk.gif</file>
+        <file>units/Warlock.gif</file>
+        <file>units/Warrior Mage.gif</file>
+        <file>units/Wind Mage.gif</file>
+        <file>units/Witch.gif</file>
+        <file>wizards/Ariel.gif</file>
+        <file>wizards/Freya.gif</file>
+        <file>wizards/Horus.gif</file>
+        <file>wizards/Jafar.gif</file>
+        <file>wizards/Kali.gif</file>
+        <file>wizards/Lo Pan.gif</file>
+        <file>wizards/Merlin.gif</file>
+        <file>wizards/Oberic.gif</file>
+        <file>wizards/Raven.gif</file>
+        <file>wizards/Rjak.gif</file>
+        <file>wizards/Sharee.gif</file>
+        <file>wizards/Sssra.gif</file>
+        <file>wizards/Tauron.gif</file>
+        <file>wizards/Tlaloc.gif</file>
+    </qresource>
+</RCC>

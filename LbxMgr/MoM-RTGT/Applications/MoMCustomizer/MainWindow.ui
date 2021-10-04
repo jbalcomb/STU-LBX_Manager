@@ -1,0 +1,1300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>661</width>
+    <height>388</height>
+   </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>80</red>
+        <green>80</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>80</red>
+        <green>80</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>80</red>
+        <green>80</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>80</red>
+        <green>80</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>127</red>
+        <green>125</green>
+        <blue>123</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>118</red>
+        <green>116</green>
+        <blue>108</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="font">
+   <font>
+    <family>URW Chancery L</family>
+    <pointsize>12</pointsize>
+    <italic>true</italic>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MASTER of MAGIC - Customizer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+    <normaloff>:/heroes/serena.gif</normaloff>:/heroes/serena.gif</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetNoConstraint</enum>
+      </property>
+      <item>
+       <widget class="QPushButton" name="pushButton_Connect">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Connect</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+          <normaloff>:/heroes/allora.gif</normaloff>:/heroes/allora.gif</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Reread">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Reread</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+          <normaloff>:/heroes/shalla.gif</normaloff>:/heroes/shalla.gif</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Wizard">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Wizard (exp)</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_Landmass">
+       <attribute name="icon">
+        <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+         <normaloff>:/heroes/rakir.gif</normaloff>:/heroes/rakir.gif</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Landmass</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayout_2">
+        <property name="fieldGrowthPolicy">
+         <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Land Size*</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="comboBox_LandSize">
+          <property name="currentIndex">
+           <number>2</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Small</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Medium</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Large</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Huge</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Pantagruel</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Random</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Initial Roads*</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="comboBox_InitialRoads">
+          <property name="currentIndex">
+           <number>2</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>None</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Short</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Normal</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Long</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Random</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="2">
+         <widget class="QLabel" name="label_17">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>* Automatically saved to Magic.exe</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::PlainText</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_Races">
+       <attribute name="icon">
+        <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+         <normaloff>:/wizards/Sharee.gif</normaloff>:/wizards/Sharee.gif</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Races</string>
+       </attribute>
+       <widget class="QListWidget" name="listWidget">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>511</width>
+          <height>261</height>
+         </rect>
+        </property>
+        <property name="isWrapping" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="gridSize">
+         <size>
+          <width>160</width>
+          <height>26</height>
+         </size>
+        </property>
+        <item>
+         <property name="text">
+          <string>Amazons</string>
+         </property>
+         <property name="checkState">
+          <enum>Unchecked</enum>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../MoMTweaker/AmazonianArchers.gif</normaloff>../MoMTweaker/AmazonianArchers.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Barbarians</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Barbarian.gif</normaloff>:/race/Barbarian.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Beastmen</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Beastmen.gif</normaloff>:/race/Beastmen.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Centaurs</string>
+         </property>
+         <property name="checkState">
+          <enum>Unchecked</enum>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dark Elf</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Dark Elf.gif</normaloff>:/race/Dark Elf.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Draconian</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Draconian.gif</normaloff>:/race/Draconian.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dwarven</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Dwarven.gif</normaloff>:/race/Dwarven.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Free Men</string>
+         </property>
+         <property name="checkState">
+          <enum>Unchecked</enum>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Gnoll</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Gnoll.gif</normaloff>:/race/Gnoll.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Gnomes</string>
+         </property>
+         <property name="checkState">
+          <enum>Unchecked</enum>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Goblins</string>
+         </property>
+         <property name="checkState">
+          <enum>Unchecked</enum>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Halfling</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Halfling.gif</normaloff>:/race/Halfling.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>High Elf</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/High Elf.gif</normaloff>:/race/High Elf.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>High_Men</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/High Men.gif</normaloff>:/race/High Men.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Ogres</string>
+         </property>
+         <property name="checkState">
+          <enum>Unchecked</enum>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Klackon</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Klackon.gif</normaloff>:/race/Klackon.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Kobolds</string>
+         </property>
+         <property name="checkState">
+          <enum>Unchecked</enum>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Lizardman</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Lizardman.gif</normaloff>:/race/Lizardman.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Nomad</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Nomad.gif</normaloff>:/race/Nomad.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Orc</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Orc.gif</normaloff>:/race/Orc.gif</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sylvans</string>
+         </property>
+         <property name="checkState">
+          <enum>Unchecked</enum>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Troll</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="icon">
+          <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+           <normaloff>:/race/Troll.gif</normaloff>:/race/Troll.gif</iconset>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_19">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>181</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Races in the game (total 13)</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_Lairs">
+       <attribute name="icon">
+        <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+         <normaloff>:/heroes/marcus.gif</normaloff>:/heroes/marcus.gif</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Lairs</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Nr Towers</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="comboBox_NrTowers">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>None</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Max (6)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Random</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Nr Nodes</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="comboBox_NrNodes">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>None</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Max (30)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Random</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Nr Normal lairs</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="comboBox_NrNormalLairs">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>None</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Max (25)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Random</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Monster strength*</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QComboBox" name="comboBox_NormalLairMonsterStrength">
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Weaker</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Normal</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Stronger</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Random</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Nr Weak lairs</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QComboBox" name="comboBox_NrWeakLairs">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>None</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Max (32)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Random</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>Monster strength*</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QComboBox" name="comboBox_WeakLairMonsterStrength">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Weak</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Normal</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Strong</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Random</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Nr Monsters*</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QComboBox" name="comboBox_NrMonsters">
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>Fewer but stronger</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Normal</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>More but weaker</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Random</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="7" column="0" colspan="2">
+         <widget class="QLabel" name="label_18">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>* Automatically saved to Magic.exe</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::PlainText</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_Picks">
+       <attribute name="icon">
+        <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+         <normaloff>:/heroes/mystic_x.gif</normaloff>:/heroes/mystic_x.gif</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Picks</string>
+       </attribute>
+       <widget class="QPushButton" name="pushButton_SaveWizardTypes">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>260</y>
+          <width>200</width>
+          <height>42</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Save to Magic.exe</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+          <normaloff>:/heroes/greyfar.gif</normaloff>:/heroes/greyfar.gif</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>9</y>
+          <width>215</width>
+          <height>292</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout_3">
+         <item row="0" column="0" colspan="2">
+          <widget class="QComboBox" name="comboBox_Wizard">
+           <item>
+            <property name="text">
+             <string>Merlin</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Merlin.gif</normaloff>:/wizards/Merlin.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Raven</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Raven.gif</normaloff>:/wizards/Raven.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sharee</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Sharee.gif</normaloff>:/wizards/Sharee.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Lo Pan</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Lo Pan.gif</normaloff>:/wizards/Lo Pan.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Jafar</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Jafar.gif</normaloff>:/wizards/Jafar.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Oberic</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Oberic.gif</normaloff>:/wizards/Oberic.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rjak</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Rjak.gif</normaloff>:/wizards/Rjak.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sss'ra</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Sssra.gif</normaloff>:/wizards/Sssra.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tauron</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Tauron.gif</normaloff>:/wizards/Tauron.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Freya</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Freya.gif</normaloff>:/wizards/Freya.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Horus</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Horus.gif</normaloff>:/wizards/Horus.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ariel</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Ariel.gif</normaloff>:/wizards/Ariel.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tlaloc</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Tlaloc.gif</normaloff>:/wizards/Tlaloc.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kali</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+              <normaloff>:/wizards/Kali.gif</normaloff>:/wizards/Kali.gif</iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Custom</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEdit_Name"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Life books</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEdit_Life"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Death books</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="lineEdit_Death"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Chaos books</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="lineEdit_Chaos"/>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>Nature books</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QLineEdit" name="lineEdit_Nature"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>Sorcery books</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLineEdit" name="lineEdit_Sorcery"/>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Skill</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QComboBox" name="comboBox_WizardSkill">
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>None</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_Spells">
+       <attribute name="icon">
+        <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+         <normaloff>:/heroes/aerie.gif</normaloff>:/heroes/aerie.gif</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Spells</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_Heroes">
+       <attribute name="icon">
+        <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+         <normaloff>:/heroes/reywind.gif</normaloff>:/heroes/reywind.gif</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Heroes</string>
+       </attribute>
+       <widget class="QPushButton" name="pushButton_RandomizeHeroAbilities">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>9</y>
+          <width>188</width>
+          <height>34</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Randomize hero abilities</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../Resources/InteractiveGameTweaker.qrc">
+          <normaloff>:/heroes/mystic_x.gif</normaloff>:/heroes/mystic_x.gif</iconset>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../../Resources/InteractiveGameTweaker.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>lineEdit_Name</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_WizardType_editingFinished()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_Life</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_WizardType_editingFinished()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_Death</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_WizardType_editingFinished()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_Chaos</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_WizardType_editingFinished()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>217</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_Nature</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_WizardType_editingFinished()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_Sorcery</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_WizardType_editingFinished()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>291</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_WizardSkill</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_WizardType_editingFinished()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>328</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>on_timer()</slot>
+  <slot>slot_WizardType_editingFinished()</slot>
+ </slots>
+</ui>

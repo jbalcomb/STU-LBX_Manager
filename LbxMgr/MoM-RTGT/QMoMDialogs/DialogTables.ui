@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogTables</class>
+ <widget class="QDialog" name="DialogTables">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>733</width>
+    <height>533</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Show tables</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="4">
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::ContiguousSelection</enum>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Show:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QComboBox" name="comboBox_Table">
+     <property name="minimumSize">
+      <size>
+       <width>160</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="maxVisibleItems">
+      <number>20</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>(None)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Building Data</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/abilities/Construction.gif</normaloff>:/abilities/Construction.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cities</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/abilities/Create Outpost.gif</normaloff>:/abilities/Create Outpost.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hero Data</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/heroes/serena.gif</normaloff>:/heroes/serena.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Item Data</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/abilities/Thrown.gif</normaloff>:/abilities/Thrown.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Item Powers</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/images/thrown.gif</normaloff>:/images/thrown.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Items in game</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/images/thrown.gif</normaloff>:/images/thrown.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Level Bonus</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/images/recruit.gif</normaloff>:/images/recruit.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Race Data</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/race/Barbarian.gif</normaloff>:/race/Barbarian.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Spell Data</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/abilities/Caster.gif</normaloff>:/abilities/Caster.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Unit Types</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/abilities/Summon Demons 1.gif</normaloff>:/abilities/Summon Demons 1.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Units in game</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/images/Level 4.gif</normaloff>:/images/Level 4.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Unrest Table</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/race/Klackon.gif</normaloff>:/race/Klackon.gif</iconset>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../Resources/InteractiveGameTweaker.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>DialogTables</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>DialogTables</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

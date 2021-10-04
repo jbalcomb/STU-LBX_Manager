@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogAddUnit</class>
+ <widget class="QDialog" name="DialogAddUnit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>456</width>
+    <height>664</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Summon unit</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QComboBox" name="comboBox_Unit">
+     <property name="maxVisibleItems">
+      <number>30</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>Hero The Healer</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/units/Healer.gif</normaloff>:/units/Healer.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hero Shuri</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+        <normaloff>:/units/Huntress.gif</normaloff>:/units/Huntress.gif</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>HM Paladins</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGraphicsView" name="graphicsView_Unit">
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/images/large_unit_background.gif);</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="pushButton_Summon">
+     <property name="text">
+      <string>Summon</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../Resources/InteractiveGameTweaker.qrc">
+       <normaloff>:/wizards/Freya.gif</normaloff>:/wizards/Freya.gif</iconset>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../Resources/InteractiveGameTweaker.qrc"/>
+ </resources>
+ <connections/>
+</ui>

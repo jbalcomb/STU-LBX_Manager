@@ -1,0 +1,7 @@
+testCase_ShootMagic_Invis1
+Unit High Men Priests
+shoot unit Dark Elf Nightblades
+at distance 2
+
+Unit of High Men Priests can not shoot an invisible unit at a distance. Attack aborted.
+

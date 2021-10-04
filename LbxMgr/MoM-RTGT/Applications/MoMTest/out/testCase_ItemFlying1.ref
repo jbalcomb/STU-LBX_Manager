@@ -1,0 +1,6 @@
+testCase_ItemFlying1
+Unit Dwarven Dwarf
+attacks unit Barbarian Barbarian
+
+Unit of Dwarven Dwarf can not attack a flying unit. Attack aborted.
+

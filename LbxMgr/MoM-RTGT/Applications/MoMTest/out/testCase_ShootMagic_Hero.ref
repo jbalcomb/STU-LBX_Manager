@@ -1,0 +1,8 @@
+testCase_ShootMagic_Hero
+Unit High Men Healer
+shoot unit High Men Spearmen
+at distance 5
+
+Unit of 1 High Men Healer magically attacks High Men Spearmen with +1 to hit for 3 damage
+Unit of High Men Spearmen has 5 units left with a total of 5 hp
+

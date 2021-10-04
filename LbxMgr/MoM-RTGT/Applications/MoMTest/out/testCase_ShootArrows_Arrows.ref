@@ -1,0 +1,8 @@
+testCase_ShootArrows_Arrows
+Unit High Men Bowmen
+shoot unit High Men Spearmen
+at distance 5
+
+Unit of 6 High Men Bowmen shoots High Men Spearmen at 5 squares with -1 to hit for 0.1 damage
+Unit of High Men Spearmen has 7.9 units left with a total of 7.9 hp
+

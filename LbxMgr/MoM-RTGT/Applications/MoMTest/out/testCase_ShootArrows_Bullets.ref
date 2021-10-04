@@ -1,0 +1,8 @@
+testCase_ShootArrows_Bullets
+Unit Halfling Slingers
+shoot unit High Men Spearmen
+at distance 10
+
+Unit of 8 Halfling Slingers shoots High Men Spearmen at 10 squares with -2 to hit for 0.1 damage
+Unit of High Men Spearmen has 7.9 units left with a total of 7.9 hp
+

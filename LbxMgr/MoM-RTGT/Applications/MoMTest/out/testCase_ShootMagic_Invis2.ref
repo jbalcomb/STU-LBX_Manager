@@ -1,0 +1,9 @@
+testCase_ShootMagic_Invis2
+Unit High Men Priests
+shoot unit Dark Elf Nightblades
+at distance 1
+
+Invisibility reduces to hit ranged physical/magical of High Men Priests to -1/-1
+Unit of 4 High Men Priests magically attacks Dark Elf Nightblades with -1 to hit for 0.4 damage
+Unit of Dark Elf Nightblades has 5.6 units left with a total of 5.6 hp
+
